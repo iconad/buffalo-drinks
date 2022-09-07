@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buffalo</title>
+  </head>
+  <body class="overflow-x-hidden pb-[1500px]">
+    <div id="app" class="site-wrapper bg-black">
+
+      <div class="main-navbar bg-theme-dark-gray fixed left-0 top-0 z-50 w-full">
+        <div class="theme-container text-white">
+            <div class="flex align-end justify-between">
+
+              <div class="main-navbar_swis_logo flex items-center">
+                <img src="/images/swis.svg" class="fill-current w-32 main-navbar_swis_logo_bg" alt="swis logo">
+                <!-- <img src="/images/swis-sm.svg" class="fill-current w-36 main-navbar_swis_logo_sm" alt="swis logo"> -->
+              </div>
+              <!-- swis logo -->
+
+              <div class="main-navbar_main_logo flex items-center">
+                <img src="/images/logo-text.svg" class="fill-current w-32 main-navbar_main_logo_bg" alt="Logo">
+                <!-- <img src="/images/logo-sm.svg" class="fill-current w-8 main-navbar_main_logo_sm" alt="Logo"> -->
+              </div>
+              <!-- main logo -->
+
+              <div class="main-navbar_burger cursor-pointer flex items-center">
+                <img src="/images/burger.svg" class="fill-current w-10 main-navbar_burger_icon" alt="Logo">
+              </div>
+              <!-- burger -->
+
+            </div>
+        </div>
+      </div>
+      <!-- site navbar -->
+
+
+      <section class="images-cover-section bg-theme-black relative hidden">
+          <div class="images-cover-section_images">
+            <div class="flex items-center justify-between">
+              <div class="w-1/4 cover-images">
+                <img src="/images/cover/r1_1.jpg" class="w-full" alt="cover image">
+              </div>
+              <div class="w-1/4 cover-images">
+                <img src="/images/cover/r1_2.jpg" class="w-full" alt="cover image">
+              </div>
+            </div>
+            <!-- row 1 -->
+
+            <div class="flex justify-between mt-32">
+              <div class="ml-20 w-1/5 cover-images">
+                <img src="/images/cover/r2_1.jpg" class="w-full" alt="cover image">
+              </div>
+              <div class="w-1/3 cover-image-center">
+                <img src="/images/cover/r2_2.jpg" class="w-full" alt="cover image">
+              </div>
+              <div class="w-1/4 cover-images">
+                <img src="/images/cover/r2_3.jpg" class="w-full" alt="cover image">
+              </div>
+            </div>
+            <!-- row 2 -->
+          </div>
+          <div class="absolute inset-0 w-full h-full bg-black bg-opacity-75">
+
+            <div class="absolute inset-0 w-full h-full">
+              <div class="theme-container text-white h-full lg:h-2/3 3xl:h-full flex items-center justify-center images-cover-section_text_block_1 ">
+                <div class="text-center w-full space-y-10 relative z-10">
+                  <h2 class="text-7xl font-black images-cover-section_text_block_1_child">We are here for you, <span>Billu</span></h2>
+                  <p class="text-3xl w-full space-y-2 images-cover-section_text_block_1_child">
+                    <span class="block-span font-extralight">We will enable your daily adventures and inspire</span>
+                    <span class="block-span font-extralight">you to join our global movement.</span>
+                    <span class="block-span font-extralight">A movement of doing more, never missing out</span>
+                    <span class="block-span font-extralight">and living a full life</span>
+                  </p>
+                </div>
+                <!-- cover text block 1 -->
+              </div>
+              <!-- contianer -->
+            </div>
+
+            <div class="absolute inset-0 w-full h-full ">
+              <div class="theme-container text-white h-full lg:h-2/3 3xl:h-full flex items-center justify-center images-cover-section_text_block_2">
+                <div class="text-center space-y-8">
+                  <div class="logo images-cover-section_text_block_2_child">
+                    <img src="/images/logo-white-sm.svg" class="fill-current w-32 mx-auto" alt="white logo">
+                  </div>
+                  <!-- logo white -->
+                  <div class="we-are-buffalos space-y-10">
+                    <h2 class="text-7xl font-black images-cover-section_text_block_2_child">We're buffalo drinks.</h2>
+                    <p class="text-3xl w-full space-y-2 images-cover-section_text_block_2_child">
+                      <span class="block-span">We're reinventing the energy drinks in a</span>
+                      <span class="block-span">way you have never imagined</span>
+                    </p>
+                  </div>
+                </div>
+                <!-- cover text block 2 -->
+              </div>
+              <!-- contianer -->
+            </div>
+
+
+
+          </div>
+
+      </section>
+      <!-- cover -->
+
+      <section id="three1Cans" class="three-cans py-10 -mt-2 relative h-screen hidden">
+
+
+        <div class="theme-container relative">
+          <div class="flex items-end justify-center relative z-10">
+
+            <div class="w-1/3 can-1">
+              <img src="/images/can1.png" class="w-5/6 ml-auto" alt="can">
+            </div>
+            <div class="w-1/2 can-2 -mb-6">
+              <img src="/images/can2.png" class="w-full" alt="can">
+            </div>
+            <div class="w-1/3 can-3">
+              <img src="/images/can3.png" class="w-5/6 mr-auto" alt="can">
+            </div>
+
+          </div>
+
+          <div class="three-1-cans-text bg-black absolute w-full top-[30%] left-0 text-white">
+            <div class="text-center w-full space-y-5">
+              <h2 class="text-5xl font-black">GET READY TO DO MORE!</h2>
+              <p class="text-4xl w-full space-y-2">
+                <span class="block-span font-extralight">with 3 different editins made for the</span>
+                <span class="block-span font-extralight">adventurous, the seekers, the doers,</span>
+                <span class="block-span font-extralight text-theme-cyan">& for everyone, literally!</span>
+              </p>
+            </div>
+          </div>
+
+        </div>
+        <!-- container -->
+
+        <!-- <div class="empty-section-pin h-screen w-full relative z-50"></div> -->
+
+
+        <div class="clip-paths absolute inset-0 h-screen overflow-hidden">
+
+          <div class="classic-path bg-theme-viking h-[200%] w-[200%] absolute top-0 -right-[70%] -rotate-[55deg]">
+            <div class="blue-path rotate-[55deg]">
+              <div class="block absolute right-64 2xl:right-[40rem] -top-36 2xl:-top-48 w-1/3">
+                <div class="blue-title uppercase font-black font-bebas text-[18rem] 2xl:text-[30rem] font-black text-white leading-none">CLASSIC</div>
+                <div class="leading-none text-white space-y-8 2xl:space-y-12 ml-14 -mt-5 blue-info">
+                  <div class="space-y-2">
+                    <div class="text-5xl 2xl:text-6xl font-bold">
+                      <span class="block">Made to inspire and</span>
+                      <span class="block">energize you</span>
+                    </div>
+                    <div class="text-3xl 2xl:text-4xl font-medium">to own your moment & live to the most</div>
+
+                  </div>
+                  <div>
+                    <nuxt-link to="/" class="blue-link classic-link inline-block px-7 py-4  rounded-xl bg-white text-theme-pacific-blue font-medium text-2xl 2xl:text-3xl font-medium"> Discover Classic </nuxt-link>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- path -->
+          </div>
+          <!-- classic path -->
+
+
+          <div class="love-edition-path bg-red-500 h-[200%] w-[200%] absolute -top-[240px] right-[0%] -rotate-[55deg]">
+            <div class="red-path rotate-[55deg]">
+              <div class="block absolute -right-[14rem] 2xl:right-[40rem] top-[5rem] 2xl:-top-48 w-1/3">
+                <div class="red-title uppercase font-black font-bebas text-[12rem] 2xl:text-[30rem] font-black text-white leading-none">LOVE EDITION</div>
+                <div class="leading-none text-white space-y-8 2xl:space-y-12 -mt-5 red-info">
+                  <div class="space-y-2">
+                    <div class="text-5xl 2xl:text-6xl font-bold">
+                      <span class="block">Made efor the</span>
+                      <span class="block">passionate ones</span>
+                    </div>
+                    <div class="text-3xl 2xl:text-4xl font-medium">
+                      <span class="block">those who appreciate, connection,</span>
+                      <span class="block">and intimacy and want to take </span>
+                      <span class="block">their relationaship to the next level</span>
+                    </div>
+
+                  </div>
+                  <div>
+                    <nuxt-link to="/" class="red-link classic-link inline-block px-7 py-4 rounded-xl bg-white text-red-500 font-medium text-2xl 2xl:text-3xl font-medium"> Discover Classic </nuxt-link>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- path -->
+          </div>
+          <!-- love edition path -->
+
+
+          <div class="gold-path bg-yellow-500 h-[50%] w-[100%] absolute bottom-0 right-[0%]">
+            <div>
+              <div class="block absolute right-0 bottom-[100%] z-50 w-full flex items-center justify-center flex-col">
+                <div class="golden-title uppercase font-black font-bebas text-[15rem] 2xl:text-[22rem] font-black text-white leading-none">GOLD EDITION</div>
+                <div class="leading-none text-white space-y-8 2xl:space-y-12 -mt-5 golden-info absolute right-10 2xl:right-32 top-[120%] 2xl:top-[130%]">
+                  <div class="space-y-2">
+                    <div class="text-5xl 2xl:text-6xl font-bold">
+                      <span class="block">made for those who</span>
+                      <span class="block">want more!</span>
+                    </div>
+                    <div class="text-3xl 2xl:text-4xl font-medium">
+                      <span class="block">adding something different to your</span>
+                      <span class="block">daily adventures experience. </span>
+                    </div>
+
+                  </div>
+                  <div>
+                    <nuxt-link to="/" class="gold-link classic-link inline-block px-7 py-4  rounded-xl bg-white text-yellow-500 font-medium text-2xl 2xl:text-3xl"> Discover Gold </nuxt-link>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- path -->
+          </div>
+          <!-- love edition path -->
+
+        </div>
+        <!-- clip paths -->
+
+
+      </section>
+      <!-- three cans -->
+
+      <section class="why-buffalo-section bg-black py-64">
+        <div class="container mx-auto text-white">
+
+          <div class="space-y-32">
+            <div class="why-buffalo-title space-y-5 text-center">
+              <h3 class="text-6xl font-bold">Why This Drink?</h3>
+              <p class="text-xl">
+                <span class="block-span">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam dicta temporibus veritatis voluptates rerum cum eum, quasi unde, dolor voluptas quis ipsum in dolore cumque. Velit perspiciatis asperiores sapiente exercitationem?</span>
+              </p>
+            </div>
+
+            <div class="why-buffalo-boxes flex items-center justify-between space-x-10">
+              <div class="h-32 w-1/4 rounded-2xl bg-gray-500"></div>
+              <div class="h-32 w-1/4 rounded-2xl bg-gray-500"></div>
+              <div class="h-32 w-1/4 rounded-2xl bg-gray-500"></div>
+              <div class="h-32 w-1/4 rounded-2xl bg-gray-500"></div>
+            </div>
+          </div>
+
+          <div class="do-more-section relative mt-32 h-screen">
+            <div class="absolute inset-0 z-20">
+              <img src="/images/cans.png" alt="cans" class="do-more-two-cans z-10 h-full w-full object-contain">
+            </div>
+
+            <div class="relative flex h-full flex-col justify-between">
+              <div class="do-more-text-text flex w-full items-center justify-between">
+                <div class="w-1/4 space-y-3">
+                  <h4 class="text-2xl font-medium 2xl:text-3xl">Featured 1</h4>
+                  <p class="text-base text-gray-200 2xl:text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, nisi delectus. Commodi laudantium alias.</p>
+                </div>
+
+                <div class="w-1/4 space-y-3">
+                  <h4 class="text-2xl font-medium 2xl:text-3xl">Featured 2</h4>
+                  <p class="text-base text-gray-200 2xl:text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, nisi delectus. Commodi laudantium alias.</p>
+                </div>
+              </div>
+
+              <div class="do-more-text-text last-do-more-text-text flex w-full items-center justify-between">
+                <div class="w-1/4 space-y-3">
+                  <h4 class="text-2xl font-medium 2xl:text-3xl">Featured 3</h4>
+                  <p class="text-base text-gray-200 2xl:text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, nisi delectus. Commodi laudantium alias.</p>
+                </div>
+
+                <div class="w-1/4 space-y-3">
+                  <h4 class="text-2xl font-medium 2xl:text-3xl">Featured 4</h4>
+                  <p class="text-base text-gray-200 2xl:text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, nisi delectus. Commodi laudantium alias.</p>
+                </div>
+              </div>
+            </div>
+            <!-- text text -->
+
+            <div class="big-do-more font-bebas absolute inset-0 flex items-center justify-center">
+              <div class="do-more text-theme-pacific-blue relative whitespace-nowrap font-black leading-none" style="font-size: 15rem">DO MORE! <sup class="text-xl">TM</sup></div>
+            </div>
+            <!-- big do more -->
+
+            <div class="do-more-list absolute inset-0 flex justify-end">
+              <ul class="space-y-5 text-9xl font-medium mr-64">
+                <li class="first-do-more-list">Option</li>
+                <li>Option</li>
+                <li>Option</li>
+                <li>Option</li>
+                <li>Option</li>
+                <li>Option</li>
+                <li>Option</li>
+                <li>Option</li>
+                <li>Option</li>
+                <li>Option</li>
+                <li class="last-do-more-list">Option</li>
+              </ul>
+            </div>
+          </div>
+          <!-- more text section -->
+        </div>
+        <!-- container -->
+      </section>
+      <!-- why buffalo -->
+
+      <section class="more-by-buffalo bg-white hidden">
+
+        <div class="theme-container">
+
+          <div class="flex items-center justify-center mt-16 py-32">
+            <div class="text-center space-y-32">
+              <h4 class="text-7xl font-bold">More by Buffalo Drinks</h4>
+              <div class="space-y-5">
+                <img src="/images/logo-black.svg" alt="logo black" class="w-32 mx-auto">
+                <div class="leading-none text-4xl font-bold">Indroducing</div>
+                <div class="leading-none text-theme-pacific-blue text-[10rem] font-black">REVIVE</div>
+                <div class="leading-none text-6xl font-bold">SPORT DRINKS</div>
+              </div>
+            </div>
+          </div>
+          <!-- more by text -->
+
+        </div>
+        <!-- container -->
+
+        <div class="colorful-sections mt-10">
+          <div class="h-screen">
+
+            <div class="w-full bg-blue-500 h-1/4 relative">
+              <div class="absolute left-0 top-0 flex items-center space-x-16 text-white h-full">
+                <span class="text-7xl font-black uppercase whitespace-nowrap"> COOL BLUE </span>
+                <img src="./images/bottle-blue.png" alt="bottle" class="h-4/5">
+              </div>
+            </div>
+
+            <div class="w-full bg-red-500 h-1/4 relative">
+              <div class="absolute left-0 top-0 flex items-center space-x-16 text-white h-full">
+                <span class="text-7xl font-black uppercase whitespace-nowrap"> FLOW RED </span>
+                <img src="./images/bottle-red.png" alt="bottle" class="h-4/5">
+              </div>
+            </div>
+
+            <div class="w-full bg-orange-400 h-1/4 relative">
+              <div class="absolute left-0 top-0 flex items-center space-x-16 text-white h-full">
+                <span class="text-7xl font-black uppercase whitespace-nowrap"> FITNESS ORANGE </span>
+                <img src="./images/bottle-orange.png" alt="bottle" class="h-4/5">
+              </div>
+            </div>
+
+            <div class="w-full bg-green-500 h-1/4 relative">
+              <div class="absolute left-0 top-0 flex items-center space-x-16 text-white h-full">
+                <span class="text-7xl font-black uppercase whitespace-nowrap"> APPLE KIWI </span>
+                <img src="./images/bottle-kiwi.png" alt="bottle" class="h-4/5">
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <!-- colorful sections -->
+
+
+      </section>
+      <!-- more by buffalo -->
+
+
+      <section class="last-ani-section hidden">
+
+          <div class="h-screen-70 bg-white flex items-center justify-center">
+            <div class="text-4xl font-medium w-5/6 lg:w-4/5 mx-auto text-center"> Buffalo drinks will boost your daily adventure by strengthening your performance, concentration, and mental wellness. </div>
+          </div>
+
+          <div class="h-64 bg-white space-y-5">
+
+            <div class="theme-container text-4xl lg:text-7xl text-center uppercase font-bold text-theme-pacific-blue"> join the movement! </div>
+            <div class="text-center text-3xl font-medium">See Buffalo Drinks in action</div>
+
+            <div class="theme-container">
+
+              <div class="events bg-gray-800 py-32">
+
+                <div class="carousel flex items-center space-x-5 bg-white">
+
+                  <div class="w-1/3 h-96 rounded-3xl bg-blue-500 flex items-center justify-center">One</div>
+                  <div class="w-1/3 h-96 rounded-3xl bg-blue-500 flex items-center justify-center">Two</div>
+                  <div class="w-1/3 h-96 rounded-3xl bg-blue-500 flex items-center justify-center">Three</div>
+
+                </div>
+                <!-- carousel -->
+
+              </div>
+              <!-- events -->
+
+
+              <div class="be-part-family bg-black text-white py-12">
+                <div class="theme-container">
+
+                  <div class="flex items-center flex-col justify-center text-center space-y-10">
+
+                    <div class="space-y-3">
+                      <div class="font-medium text-4xl"> Be apart of our family </div>
+                      <p class="text-2xl"> Enjoy exclusive events, activities, and more near you </p>
+                    </div>
+
+                    <ul class="family-social w-full flex items-center justify-center space-x-5">
+
+                      <li class="">
+                        <a href="#">
+                          <svg class="fill-current w-8 h-8 transition hover:scale-125" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                      </li>
+
+                      <li class="">
+                        <a href="#">
+                          <svg class="fill-current w-8 h-8 transition hover:scale-125" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913a5.885 5.885 0 0 0 1.384 2.126A5.868 5.868 0 0 0 4.14 23.37c.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558a5.898 5.898 0 0 0 2.126-1.384 5.86 5.86 0 0 0 1.384-2.126c.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913a5.89 5.89 0 0 0-1.384-2.126A5.847 5.847 0 0 0 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227a3.81 3.81 0 0 1-.899 1.382 3.744 3.744 0 0 1-1.38.896c-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421a3.716 3.716 0 0 1-1.379-.899 3.644 3.644 0 0 1-.9-1.38c-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 1 0 0-12.324zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405a1.441 1.441 0 0 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"/></svg>
+                        </a>
+                      </li>
+
+                      <li class="">
+                        <a href="#">
+                          <svg class="fill-current w-8 h-8 transition hover:scale-125" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.953 4.57a10 10 0 0 1-2.825.775 4.958 4.958 0 0 0 2.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 0 0-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 0 0-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 0 1-2.228-.616v.06a4.923 4.923 0 0 0 3.946 4.827 4.996 4.996 0 0 1-2.212.085 4.936 4.936 0 0 0 4.604 3.417 9.867 9.867 0 0 1-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 0 0 7.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0 0 24 4.59z"/></svg>
+                        </a>
+                      </li>
+
+                      <li class="">
+                        <a href="#">
+                          <svg class="fill-current w-8 h-8 transition hover:scale-125" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                        </a>
+                      </li>
+
+                      <li class="">
+                        <a href="#">
+                          <svg class="fill-current w-8 h-8 transition hover:scale-125" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.206.793c.99 0 4.347.276 5.93 3.821.529 1.193.403 3.219.299 4.847l-.003.06c-.012.18-.022.345-.03.51.075.045.203.09.401.09.3-.016.659-.12 1.033-.301a.996.996 0 0 1 .464-.104c.182 0 .359.029.509.09.45.149.734.479.734.838.015.449-.39.839-1.213 1.168-.089.029-.209.075-.344.119-.45.135-1.139.36-1.333.81-.09.224-.061.524.12.868l.015.015c.06.136 1.526 3.475 4.791 4.014.255.044.435.27.42.509a.606.606 0 0 1-.045.225c-.24.569-1.273.988-3.146 1.271-.059.091-.12.375-.164.57-.029.179-.074.36-.134.553-.076.271-.27.405-.555.405h-.03a3.19 3.19 0 0 1-.538-.074 6.034 6.034 0 0 0-1.273-.135c-.3 0-.599.015-.913.074-.6.104-1.123.464-1.723.884-.853.599-1.826 1.288-3.294 1.288-.06 0-.119-.015-.18-.015h-.149c-1.468 0-2.427-.675-3.279-1.288-.599-.42-1.107-.779-1.707-.884a6.623 6.623 0 0 0-.928-.074c-.54 0-.958.089-1.272.149a2.879 2.879 0 0 1-.54.074c-.374 0-.523-.224-.583-.42-.061-.192-.09-.389-.135-.567-.046-.181-.105-.494-.166-.57-1.918-.222-2.95-.642-3.189-1.226a.6.6 0 0 1-.055-.225.496.496 0 0 1 .42-.509c3.264-.54 4.73-3.879 4.791-4.02l.016-.029c.18-.345.224-.645.119-.869-.195-.434-.884-.658-1.332-.809a2.233 2.233 0 0 1-.346-.119c-1.107-.435-1.257-.93-1.197-1.273.09-.479.674-.793 1.168-.793.146 0 .27.029.383.074.42.194.789.3 1.104.3.234 0 .384-.06.465-.105l-.046-.569c-.098-1.626-.225-3.651.307-4.837C7.392 1.077 10.739.807 11.727.807l.419-.015h.06z"/></svg>
+                        </a>
+                      </li>
+
+
+                      <li class="">
+                        <a href="#">
+                          <svg class="fill-current w-8 h-8 transition hover:scale-125" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+                        </a>
+                      </li>
+
+
+                    </ul>
+                    <!-- family social -->
+                  </div>
+
+                </div>
+              </div>
+              <!-- be a part of family -->
+
+
+
+              <footer class="py-10 bg-black text-white">
+                <div class="flex space-x-10">
+
+                    <div class="p-5">
+                      <img src="./images/logo-full.svg" alt="logo" class="w-48">
+                    </div>
+                    <!-- box -->
+
+                    <div class="flex flex-col space-y-5 w-full">
+
+                      <div class="w-full flex justify-between space-x-10">
+
+                        <div class="w-full space-y-4">
+                          <div class="font-medium text-xl">Our Products</div>
+                          <ul class="text-lg space-y-2">
+                            <li>
+                              <a href="#">Classic</a>
+                            </li>
+                            <li>
+                              <a href="#">Love Edition</a>
+                            </li>
+                            <li>
+                              <a href="#">Gold Edition</a>
+                            </li>
+                            <li>
+                              <a href="#">Buffalo Revive</a>
+                            </li>
+                          </ul>
+                        </div>
+                        <!-- box -->
+
+                        <div class="w-full space-y-4">
+                          <div class="font-medium text-xl">Join the movement</div>
+                            <ul class="text-lg space-y-2">
+                              <li>
+                                <a href="#">join our distributor program</a>
+                              </li>
+                              <li>
+                                <a href="#">take action towards the planet</a>
+                              </li>
+                            </ul>
+                        </div>
+
+                        <div class="w-full space-y-8">
+                          <div class="text-lg space-y-4">
+                            <div class="font-medium text-xl">Contact Us</div>
+                            <p>lets talk about your goals hello@buffaloenergy.com</p>
+                          </div>
+                          <div class="footer-social space-y-4">
+                            <div class="font-medium text-xl">Follow Us</div>
+                            <p> Beome one of our family & join our onine community </p>
+                            <ul class="flex items-center justify-center space-x-4">
+                              <li class="">
+                                <a href="#">
+                                  <svg class="fill-current w-5 h-5 transition hover:scale-125" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                                </a>
+                              </li>
+
+                              <li class="">
+                                <a href="#">
+                                  <svg class="fill-current w-5 h-5 transition hover:scale-125" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913a5.885 5.885 0 0 0 1.384 2.126A5.868 5.868 0 0 0 4.14 23.37c.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558a5.898 5.898 0 0 0 2.126-1.384 5.86 5.86 0 0 0 1.384-2.126c.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913a5.89 5.89 0 0 0-1.384-2.126A5.847 5.847 0 0 0 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227a3.81 3.81 0 0 1-.899 1.382 3.744 3.744 0 0 1-1.38.896c-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421a3.716 3.716 0 0 1-1.379-.899 3.644 3.644 0 0 1-.9-1.38c-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 1 0 0-12.324zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405a1.441 1.441 0 0 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"/></svg>
+                                </a>
+                              </li>
+
+                              <li class="">
+                                <a href="#">
+                                  <svg class="fill-current w-5 h-5 transition hover:scale-125" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.953 4.57a10 10 0 0 1-2.825.775 4.958 4.958 0 0 0 2.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 0 0-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 0 0-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 0 1-2.228-.616v.06a4.923 4.923 0 0 0 3.946 4.827 4.996 4.996 0 0 1-2.212.085 4.936 4.936 0 0 0 4.604 3.417 9.867 9.867 0 0 1-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 0 0 7.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0 0 24 4.59z"/></svg>
+                                </a>
+                              </li>
+
+                              <li class="">
+                                <a href="#">
+                                  <svg class="fill-current w-5 h-5 transition hover:scale-125" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                                </a>
+                              </li>
+
+                              <li class="">
+                                <a href="#">
+                                  <svg class="fill-current w-5 h-5 transition hover:scale-125" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.206.793c.99 0 4.347.276 5.93 3.821.529 1.193.403 3.219.299 4.847l-.003.06c-.012.18-.022.345-.03.51.075.045.203.09.401.09.3-.016.659-.12 1.033-.301a.996.996 0 0 1 .464-.104c.182 0 .359.029.509.09.45.149.734.479.734.838.015.449-.39.839-1.213 1.168-.089.029-.209.075-.344.119-.45.135-1.139.36-1.333.81-.09.224-.061.524.12.868l.015.015c.06.136 1.526 3.475 4.791 4.014.255.044.435.27.42.509a.606.606 0 0 1-.045.225c-.24.569-1.273.988-3.146 1.271-.059.091-.12.375-.164.57-.029.179-.074.36-.134.553-.076.271-.27.405-.555.405h-.03a3.19 3.19 0 0 1-.538-.074 6.034 6.034 0 0 0-1.273-.135c-.3 0-.599.015-.913.074-.6.104-1.123.464-1.723.884-.853.599-1.826 1.288-3.294 1.288-.06 0-.119-.015-.18-.015h-.149c-1.468 0-2.427-.675-3.279-1.288-.599-.42-1.107-.779-1.707-.884a6.623 6.623 0 0 0-.928-.074c-.54 0-.958.089-1.272.149a2.879 2.879 0 0 1-.54.074c-.374 0-.523-.224-.583-.42-.061-.192-.09-.389-.135-.567-.046-.181-.105-.494-.166-.57-1.918-.222-2.95-.642-3.189-1.226a.6.6 0 0 1-.055-.225.496.496 0 0 1 .42-.509c3.264-.54 4.73-3.879 4.791-4.02l.016-.029c.18-.345.224-.645.119-.869-.195-.434-.884-.658-1.332-.809a2.233 2.233 0 0 1-.346-.119c-1.107-.435-1.257-.93-1.197-1.273.09-.479.674-.793 1.168-.793.146 0 .27.029.383.074.42.194.789.3 1.104.3.234 0 .384-.06.465-.105l-.046-.569c-.098-1.626-.225-3.651.307-4.837C7.392 1.077 10.739.807 11.727.807l.419-.015h.06z"/></svg>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+
+                      </div>
+                      <!-- top -->
+                      <div class="relative">
+                        <img src="./images/18plus.svg" alt="logo" class="absolute -top-16 w-1/2">
+                      </div>
+                      <!-- bottom -->
+
+                    </div>
+
+                </div>
+              </footer>
+
+            </div>
+            <!-- container -->
+
+
+          </div>
+
+
+      </section>
+      <!-- last animation section -->
+
+
+
+
+
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
