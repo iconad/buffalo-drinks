@@ -94,12 +94,15 @@ const changeTheColorToBlack = document.querySelector('.change-the-color-to-black
     }else{
 
     gsap.to(hideOnLogin, 1, { opacity: 0 }, 'one')
-    gsap.to(mainNavbar, 1, { backgroundColor: "rgba(51, 51, 51, 1)", height: 100 }, 'one')
-    gsap.to(loginWrapperBlack, 1, { backgroundColor: "rgba(51, 51, 51, 0)", scale: 10 }, 'one')
+    mainNavbar.setAttribute("style", "background-color: rgba(51, 51, 51, 1); height: 100px");
+    loginLogo.setAttribute("style", "transplate: '-295%'; scale: 0.6; objectFit: 'cover'; objectPosition: 'bottom'; height: 70");
+    // gsap.to(mainNavbar, 1, { backgroundColor: "rgba(51, 51, 51, 1)", height: 100, ease: 'none' }, 'one')
+    // gsap.to(loginWrapperBlack, 1, { backgroundColor: "rgba(51, 51, 51, 0)", scale: 10 }, 'one')
     gsap.to('body', 1, { overflowY: 'scroll' }, 'one')
-    gsap.fromTo(loginLogo, 1,
-        { y: '0%', scale: 1, objectFit: 'cover', objectPosition: 'bottom', height: 'auto'  },
-        { y: '-295%', scale: 0.6, objectFit: 'cover', objectPosition: 'bottom', height: 70 }, 'one')
+
+    // gsap.fromTo(loginLogo, 1,
+        // { y: '0%', scale: 1, objectFit: 'cover', objectPosition: 'bottom', height: 'auto'  },
+        // { y: '-295%', scale: 0.6, objectFit: 'cover', objectPosition: 'bottom', height: 70 }, 'one')
 
     }
 
