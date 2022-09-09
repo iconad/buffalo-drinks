@@ -14,6 +14,11 @@ const mainNavbarMainLogoLg = document.querySelector('.main-navbar_main_logo_lg')
 const mainNavbarMainLogoSm = document.querySelector('.main-navbar_main_logo_sm')
 const mainNavbarBurger = document.querySelector('.main-navbar_burger')
 const mainNavbarBurgerIcon = document.querySelector('.main-navbar_burger_icon')
+const loginWrapper = document.querySelector('.login-wrapper')
+const loginWrapperBlack = document.querySelector('.login-wrapper-black')
+const loginLogo = document.querySelector('.login-logo')
+const hideOnLogin = document.querySelectorAll('.hide-on-login')
+const loginInput = document.querySelector('#loginInput')
 // Cover
 const imageCoverSection = document.querySelector('.images-cover-section')
 const imageCoverSectionImages = document.querySelector('.images-cover-section_images')
@@ -49,6 +54,21 @@ const bigDoMore = document.querySelector('.big-do-more')
 const doMoreList = document.querySelector('.do-more-list')
 const lastDoMoreList = document.querySelector('.last-do-more-list')
 
+const moreByBuffalo = document.querySelector('.more-by-buffalo')
+const moreByBuffaloTitle = document.querySelector('.more-by-buffalo-title')
+const moreByBuffaloInfo = document.querySelector('.more-by-buffalo-info')
+const colorfulBottles = document.querySelector('.colorful-bottles')
+const bottlePath = document.querySelectorAll('.bottle-path')
+const bottleContainer = document.querySelectorAll('.bottle-container')
+const bePartFamily = document.querySelector('.be-part-family')
+const events = document.querySelector('.events')
+const joinTheMovement = document.querySelector('.join-the-movement')
+const joinTheMovementOne = document.querySelector('.join-the-movement-one')
+const joinTheMovementTwo = document.querySelector('.join-the-movement-two')
+const joinTheMovementThree = document.querySelector('.join-the-movement-three')
+const joinTheMovementInfo = document.querySelector('.join-the-movement-info')
+const changeTheColorToBlack = document.querySelector('.change-the-color-to-black')
+
 
 
 
@@ -62,6 +82,71 @@ const lastDoMoreList = document.querySelector('.last-do-more-list')
   }, (context) => {
 
     let { isLaptop, isDesktop } = context.conditions;
+
+    let username = localStorage.getItem("username");
+
+    if(!username) {
+      gsap.set(mainNavbar, {backgroundColor: "rgba(51, 51, 51, 0)", scale: 1})
+      gsap.set(loginWrapperBlack, {backgroundColor: "rgba(0, 0, 0, 1)" , opacity: 1})
+      gsap.set(mainNavbarSwissLogo, { y: 30 })
+      gsap.set(mainNavbarSwissLogoSm, { y: 30, opacity: 0 })
+      gsap.set(mainNavbarBurger, { y: -30 })
+    }else{
+
+    gsap.to(hideOnLogin, 1, { opacity: 0 }, 'one')
+    gsap.to(mainNavbar, 1, { backgroundColor: "rgba(51, 51, 51, 1)", height: 100 }, 'one')
+    gsap.to(loginWrapperBlack, 1, { backgroundColor: "rgba(51, 51, 51, 0)", scale: 10 }, 'one')
+    gsap.to('body', 1, { overflowY: 'scroll' }, 'one')
+    gsap.fromTo(loginLogo, 1,
+        { y: '0%', scale: 1, objectFit: 'cover', objectPosition: 'bottom', height: 'auto'  },
+        { y: '-295%', scale: 0.6, objectFit: 'cover', objectPosition: 'bottom', height: 70 }, 'one')
+
+    }
+
+
+
+
+    loginInput.addEventListener('keypress', function(e) {
+
+
+      if(e.keyCode === 13){
+
+        e.preventDefault();
+
+        let loginInputValue = loginInput.value
+
+        localStorage.setItem("username", loginInputValue);
+
+        const tl0 = gsap.timeline();
+
+        tl0.to(hideOnLogin, 1, { opacity: 0 }, 'one')
+          .to(mainNavbar, 1, { backgroundColor: "rgba(51, 51, 51, 1)", height: 100 }, 'one')
+          .to(loginWrapperBlack, 1, { backgroundColor: "rgba(51, 51, 51, 0)", scale: 10 }, 'one')
+          .to('body', 1, { overflowY: 'scroll' }, 'one')
+          .fromTo(loginLogo, 1,
+              { y: '0%', scale: 1, objectFit: 'cover', objectPosition: 'bottom', height: 'auto'  },
+              { y: '-295%', scale: 0.6, objectFit: 'cover', objectPosition: 'bottom', height: 70 }, 'one')
+
+      }
+
+    })
+
+
+    // Animated Navbar
+    const tlNavbar = gsap.timeline({
+      scrollTrigger: {
+        trigger: can1One,
+        start: "bottom bottom",
+        scrub: 1,
+      }
+    });
+
+    tlNavbar.to(mainNavbar, 1, { height: 50 }, 'one')
+      .to(mainNavbarSwissLogoLg, 0.5, { y: -10, opacity: 0 }, 'one')
+      .to(mainNavbarSwissLogoSm, 1, { y: -13, opacity: 1 }, 'one')
+      .to(mainNavbarBurgerIcon, 1, { y: -24, scale: 0.7 }, 'one')
+      .to(loginLogo, 0.5, { y: '-232%', scale: 0.4, objectFit: 'cover', objectPosition: 'top', height: 100 }, 'one')
+
 
 
     // Animated Cover
@@ -80,6 +165,7 @@ const lastDoMoreList = document.querySelector('.last-do-more-list')
     tl1.from(imageCoverSectionTextBlock1Child, 3, { y:200, autoAlpha:1, stagger:0.3}, 'one')
     .to(imageCoverSectionTextBlock1Child, 10, { y:-300, autoAlpha:0, stagger:0.3}, 'two')
 
+    .from(coverImages, 5, { y:100, autoAlpha:1, stagger:1}, 'one')
     .from(coverImages, 5, { y:100, autoAlpha:1, stagger:1}, 'one')
     .from(coverImageCenter, 5, { y:100, autoAlpha:1}, 'one')
     .to(coverImages, 5, { y:-100, autoAlpha:1, stagger:1}, 'two')
@@ -162,110 +248,98 @@ const lastDoMoreList = document.querySelector('.last-do-more-list')
     .fromTo(goldenTitle, 1, { x: 0, scale: 1 }, { x: '23%', y: '180%', scale: 0.7 }, 'golden-in-full')
     .fromTo(goldenInfo, 1, { y: '300%', opacity: 0 }, { x: '-33%', y: '130%', opacity: 1 }, 'golden-in')
 
-
-    // Why Buffalo Timeline
-    // const tl3 = gsap.timeline({
-    //   scrollTrigger: {
-    //     trigger: whyBuffalloSection,
-    //     start: "top top+=20%",
-    //     end: 'center center',
-    //     scrub: 1
-    //   }
-    // });
-
-    // tl3.to(whyBuffalloTitle, 0.5, { scale: 0.8, opacity: 0.6 } )
-    // .to(whyBuffalloBoxes, 0.5, { scale: 0.8, opacity: 0.6 } )
-
-
-    // const tl4 = gsap.timeline({
-    //   scrollTrigger: {
-    //     trigger: doMoreSection,
-    //     start: "center center",
-    //     end: '+=1000',
-    //     endTrigger: doMoreSection,
-    //     scrub: bigDoMore,
-    //     pin: true
-    //   }
-    // });
-
-
-    // tl4.fromTo(doMoreTextText, 1, {y: 500, opacity: 0}, { y: 0, opacity: 1 }, "text-in-=1" )
-    // .fromTo(doMoreTextText, 1, {y: 0, opacity: 1}, { y: -1500, opacity: 0 }, "text-out+=0.1" )
-    // .fromTo(doMoreTwoCans, 1, {y: 0, opacity: 1}, { y: -1500, opacity: 0 }, "do-more-in" )
-    // .fromTo(bigDoMore, 1, {x: 0, y: 500, opacity: 0}, {x: 0,  y: 0, opacity: 1 }, "do-more-in-=1" )
-    // .fromTo(bigDoMore, 1, {x: 0, scale: 1}, { x:-290, scale: 0.35}, "do-more-in" )
-    // .fromTo(doMoreList, 1, {y: 500, x: 200, opacity: 0}, { y: 300, x: 200, opacity: 1 }, "do-more-list-=1" )
-
-
-    // const tl5 = gsap.timeline({
-    //     ScrollTrigger: {
-    //     trigger: bigDoMore,
-    //     start: "center center",
-    //     end: '+=1150',
-    //     endTrigger: lastDoMoreList,
-    //     markers: true,
-    //     pin: true,
-    //     scrub: 1
-    //   }
-    // });
-
-    // tl5.fromTo(bigDoMore, 1, {x: 0, scale: 1}, { x:-290, scale: 0.35}, "do-more-in" )
-
   // Why Buffalo Timeline
-const tl4 = gsap.timeline({
-  scrollTrigger: {
-    trigger: whyBuffalloSection,
-    start: "top top+=20%",
-    end: "center center",
-    scrub: 1
-  }
-});
-
-tl4
-  .to(whyBuffalloTitle, 0.5, { scale: 0.8, opacity: 0.6 })
-  .to(whyBuffalloBoxes, 0.5, { scale: 0.8, opacity: 0.6 });
-
-const tl5 = gsap.timeline({
-  scrollTrigger: {
-    trigger: doMoreSection,
-    start: "center center",
-    end: "+=1000",
-    endTrigger: doMoreSection,
-    scrub: bigDoMore,
-    pin: true,
-    markers: true
-  }
-});
-
-tl5.fromTo( doMoreTextText, 1, { y: 500, opacity: 0 }, { y: 0, opacity: 1 }, "text-in-=1")
-  .fromTo( doMoreTextText, 1, { y: 0, opacity: 1 }, { y: -1500, opacity: 0 }, "text-out+=0.1")
-  .fromTo( doMoreTwoCans, 1, { y: 0, opacity: 1 }, { y: -1500, opacity: 0 }, "do-more-in")
-  .fromTo( bigDoMore, 1, { x: 0, y: 500, opacity: 0 }, { x: 0, y: 0, opacity: 1 }, "do-more-in-=1")
-  .fromTo( bigDoMore, 1, { x: 0, scale: 1 }, { x: -290, scale: 0.35 }, "do-more-in")
-  .fromTo( doMoreList, 1, { y: 500, x: 200, opacity: 0 }, { y: 300, x: 200, opacity: 1 }, "do-more-list-=1")
-
-  .to(".do-more-list", { duration: 3, yPercent: -200, ease: 'none' })
-  .to(".do-more-list li", {
-    keyframes: {
-      color: ['red', 'white'],
-    },
-    duration: 0.2,
-    stagger: {
-      amount: 3
+  const tl3 = gsap.timeline({
+    scrollTrigger: {
+      trigger: whyBuffalloSection,
+      start: "top top+=20%",
+      end: "center center",
+      scrub: 1
     }
-  }, '<');
+  });
+
+  tl3
+    .to(whyBuffalloTitle, 0.5, { scale: 0.8, opacity: 0.6 })
+    .to(whyBuffalloBoxes, 0.5, { scale: 0.8, opacity: 0.6 });
+
+  const tl4 = gsap.timeline({
+    scrollTrigger: {
+      trigger: doMoreSection,
+      start: 'center center',
+      end: '+=100%',
+
+      endTrigger: '.last-do-more-list',
+      scrub: bigDoMore,
+      pin: true,
+    }
+  });
+
+  tl4.fromTo( doMoreTextText, 1, { y: 500, opacity: 0 }, { y: 0, opacity: 1 }, "text-in-=1")
+    .fromTo( doMoreTextText, 1, { y: 0, opacity: 1 }, { y: -1500, opacity: 0 }, "text-out+=0.1")
+    .fromTo( doMoreTwoCans, 1, { y: 0, opacity: 1 }, { y: -1500, opacity: 0 }, "do-more-in")
+    .fromTo( bigDoMore, 1, { x: 0, y: 500, opacity: 0 }, { x: 0, y: 0, opacity: 1 }, "do-more-in-=1")
+    .fromTo( bigDoMore, 1, { x: 0, scale: 1 }, { x: -290, scale: 0.35 }, "do-more-in")
+    .fromTo( doMoreList, 1, { y: 500, x: 200, opacity: 0 }, { y: 300, x: 200, opacity: 1 }, "do-more-list-=1")
+
+    .to(".do-more-list", { duration: 3, yPercent: -200, ease: 'none' })
+    .to(".do-more-list li", {
+
+      keyframes: {
+        color: ['white', '#6b7280'],
+      },
+
+      duration: 0.5,
+      stagger: {
+        amount: 2.4
+      }
+
+    }, '<');
 
 
+    // More Buffalo Timeline
+    const tl5 = gsap.timeline({
+      scrollTrigger: {
+        trigger: moreByBuffalo,
+        start: "top top",
+        end: "+=2000 center",
+        scrub: 1,
+        pin: colorfulBottles,
+      }
+    });
 
+    tl5.fromTo(moreByBuffaloTitle, 3, { y: '0%', scale: 1, opacity: 1 }, { y: '-50%', scale: 0.7, opacity: 0.6 }, 'one')
+      .fromTo(moreByBuffaloInfo, 3, { y: '0%', scale: 1, opacity: 1 }, { y: '-50%', scale: 0.7, opacity: 0.6 }, 'one')
+      .fromTo(bottlePath, 2, { x:'-100%' }, { x:'0%', stagger:0.3}, 'two-=2')
+      .fromTo(bottleContainer, 5, { x:'-100%' }, { x:'50%', stagger:0.3}, 'two-=2')
+      .fromTo(bottlePath, 2, { x:'0%' }, { x:'100%', stagger:0.3}, 'three-=2')
 
+    gsap.set(changeTheColorToBlack, {backgroundColor: 'white'});
 
+    // Join The movement
+    const tl6 = gsap.timeline({
+      scrollTrigger: {
+        trigger: joinTheMovement,
+        start: "center center",
+        end: '+=1000',
+        scrub: 1,
+        pin: true,
+        pinSpacer: false
+      }
+    });
+
+    tl6.fromTo(joinTheMovement, 1, { scale: 0.8, opacity: 0}, { scale: 1, opacity: 1 })
+    .fromTo(joinTheMovementOne, 1, { y: '0%', scale: 1}, { y: '-130%', scale: 0.8 }, 'one')
+    .fromTo(joinTheMovementTwo, 1, { y: '200%', opacity: 0 }, { y: '0%', opacity: 1 }, 'one')
+    .fromTo(joinTheMovementOne, 1, { y: '-140%', opacity: 1 }, { y: '-340%', opacity: 0 }, 'two+=1')
+    .fromTo(joinTheMovementTwo, 1, { y: '0%' }, { y: '-140%', color: 'white' }, 'two+=1')
+    .to(changeTheColorToBlack, 1, { backgroundColor: '#000000' }, 'two+=1')
+    .fromTo(joinTheMovementThree, 1, { y: '0%', opacity: 0 }, { y: '-220%', opacity: 1 }, 'two+=1')
+    .to(events, 1, { y: '-20%', opacity: 1 }, 'two')
+    .to(bePartFamily, 1, { y: '-20%', opacity: 1 }, 'two')
 
 
 
   })
-
-
-
 
 
 
