@@ -5,6 +5,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 // Navbar
+const userNameSection = document.querySelector('.username-section')
+const userName = document.querySelector('#userName')
 const mainNavbar = document.querySelector('.main-navbar')
 const mainNavbarSwissLogo = document.querySelector('.main-navbar_swis_logo')
 const mainNavbarSwissLogoLg = document.querySelector('.main-navbar_swis_logo_lg')
@@ -70,39 +72,49 @@ const joinTheMovementInfo = document.querySelector('.join-the-movement-info')
 const changeTheColorToBlack = document.querySelector('.change-the-color-to-black')
 
 
-
-
-// const textBlock1 =  gsap.timeline({ paused:true }).fromTo(imageCoverSectionTextBlock1Child, 1, { y:100, opacity:0 }, { y:0, opacity:1, duration:0.5, stagger:0.3},)
-
   let matchMedia = gsap.matchMedia()
 
   matchMedia.add({
-    isLaptop: "(min-width: 1150px) and (max-width: 1550px)",
-    isDesktop: "(min-width: 1551px)",
+    isMobile: "(min-width: 200px) and (max-width: 640px)",
+    isTab: "(min-width: 641px) and (max-width: 1024px)",
+    isSmallLaptop: "(min-width: 1025px) and (max-width: 1279px)",
+    isLaptop: "(min-width: 1280px) and (max-width: 1536px)",
+    isDesktop: "(min-width: 1537px)",
   }, (context) => {
 
-    let { isLaptop, isDesktop } = context.conditions;
+    let { isMobile, isTab, isSmallLaptop, isLaptop, isDesktop } = context.conditions;
 
     let username = localStorage.getItem("username");
 
+
+
     if(!username) {
+
+      gsap.set(userNameSection, {opacity: 0})
+
+
       gsap.set(mainNavbar, {backgroundColor: "rgba(51, 51, 51, 0)", scale: 1})
-      gsap.set(loginWrapperBlack, {backgroundColor: "rgba(0, 0, 0, 1)" , opacity: 1})
+      gsap.set(loginWrapperBlack, {backgroundColor: "rgba(0, 0, 0, 0.95)" , opacity: 1 })
       gsap.set(mainNavbarSwissLogo, { y: 30 })
       gsap.set(mainNavbarSwissLogoSm, { y: 30, opacity: 0 })
       gsap.set(mainNavbarBurger, { y: -30 })
+
     }else{
 
-    gsap.to(hideOnLogin, 1, { opacity: 0 }, 'one')
-    mainNavbar.setAttribute("style", "background-color: rgba(51, 51, 51, 1); height: 100px");
-    loginLogo.setAttribute("style", "transplate: '-295%'; scale: 0.6; objectFit: 'cover'; objectPosition: 'bottom'; height: 70");
-    // gsap.to(mainNavbar, 1, { backgroundColor: "rgba(51, 51, 51, 1)", height: 100, ease: 'none' }, 'one')
-    // gsap.to(loginWrapperBlack, 1, { backgroundColor: "rgba(51, 51, 51, 0)", scale: 10 }, 'one')
-    gsap.to('body', 1, { overflowY: 'scroll' }, 'one')
+      userName.innerHTML = username
 
-    // gsap.fromTo(loginLogo, 1,
-        // { y: '0%', scale: 1, objectFit: 'cover', objectPosition: 'bottom', height: 'auto'  },
-        // { y: '-295%', scale: 0.6, objectFit: 'cover', objectPosition: 'bottom', height: 70 }, 'one')
+      gsap.to(hideOnLogin, 0, { opacity: 0 }, 'one')
+      gsap.to(mainNavbar, 0, { backgroundColor: "rgba(51, 51, 51, 1)", height: 100 }, 'one')
+      gsap.to(loginWrapperBlack, 0, { backgroundColor: "rgba(51, 51, 51, 0)", scale: 10 }, 'one')
+      gsap.to('body', 0, { overflowY: 'scroll', overflowX: 'hidden' }, 'one')
+      gsap.to(loginLogo, 0,
+        {
+          y: isMobile ? '-440%' : isTab ? '-580%' : isSmallLaptop ? '-350%' : isLaptop ? '-295%' : '-780%' , scale: isMobile ? 0.5 : 0.6,
+          objectFit: 'cover', objectPosition: 'bottom', height: 70
+        }, 'one')
+      gsap.set(mainNavbarSwissLogo, { y: isMobile ? 25 : 30, x: isMobile ? -20 : 0, scale: isMobile ? 0.8 : 1 })
+      gsap.set(mainNavbarSwissLogoSm, { y: 30, opacity: 0 })
+      gsap.set(mainNavbarBurger, { y: -15, scale: isMobile ? 0.8 : 1 })
 
     }
 
@@ -116,9 +128,14 @@ const changeTheColorToBlack = document.querySelector('.change-the-color-to-black
 
         e.preventDefault();
 
+
         let loginInputValue = loginInput.value
 
         localStorage.setItem("username", loginInputValue);
+
+        userName.innerHTML =  localStorage.getItem("username");
+
+        gsap.to(userNameSection, 0.5, { opacity: 1 }).delay(0.8)
 
         const tl0 = gsap.timeline();
 
@@ -126,10 +143,9 @@ const changeTheColorToBlack = document.querySelector('.change-the-color-to-black
           .to(mainNavbar, 1, { backgroundColor: "rgba(51, 51, 51, 1)", height: 100 }, 'one')
           .to(loginWrapperBlack, 1, { backgroundColor: "rgba(51, 51, 51, 0)", scale: 10 }, 'one')
           .to('body', 1, { overflowY: 'scroll' }, 'one')
-          .fromTo(loginLogo, 1,
+          .fromTo(loginLogo, 0.5,
               { y: '0%', scale: 1, objectFit: 'cover', objectPosition: 'bottom', height: 'auto'  },
               { y: '-295%', scale: 0.6, objectFit: 'cover', objectPosition: 'bottom', height: 70 }, 'one')
-
       }
 
     })
@@ -146,9 +162,12 @@ const changeTheColorToBlack = document.querySelector('.change-the-color-to-black
 
     tlNavbar.to(mainNavbar, 1, { height: 50 }, 'one')
       .to(mainNavbarSwissLogoLg, 0.5, { y: -10, opacity: 0 }, 'one')
-      .to(mainNavbarSwissLogoSm, 1, { y: -13, opacity: 1 }, 'one')
-      .to(mainNavbarBurgerIcon, 1, { y: -24, scale: 0.7 }, 'one')
-      .to(loginLogo, 0.5, { y: '-232%', scale: 0.4, objectFit: 'cover', objectPosition: 'top', height: 100 }, 'one')
+      .to(mainNavbarSwissLogoSm, 1, { y: isMobile ? -23 : -13, opacity: 1 }, 'one')
+      .to(mainNavbarBurgerIcon, 1, { y: isMobile ? -30 : -24, scale: 0.7 }, 'one')
+      .to(loginLogo, 0.5,
+        {
+          y: isMobile ? '-336%' : isTab ? '-429%' : isSmallLaptop ? '-270%' : isLaptop ? '-232%' : '-572%' , scale: isMobile ? 0.3 : 0.4, objectFit: 'cover', objectPosition: 'top', height: 100
+        }, 'one')
 
 
 
@@ -165,7 +184,10 @@ const changeTheColorToBlack = document.querySelector('.change-the-color-to-black
       }
     });
 
-    tl1.from(imageCoverSectionTextBlock1Child, 3, { y:200, autoAlpha:1, stagger:0.3}, 'one')
+    tl1.from(imageCoverSectionTextBlock1Child, 3,
+      {
+        y: isMobile ? 0 : isTab ? 0 : isSmallLaptop ? 200 : isLaptop ? 200 : 0, autoAlpha:1, stagger:0.3
+      }, 'one')
     .to(imageCoverSectionTextBlock1Child, 10, { y:-300, autoAlpha:0, stagger:0.3}, 'two')
 
     .from(coverImages, 5, { y:100, autoAlpha:1, stagger:1}, 'one')
@@ -174,24 +196,34 @@ const changeTheColorToBlack = document.querySelector('.change-the-color-to-black
     .to(coverImages, 5, { y:-100, autoAlpha:1, stagger:1}, 'two')
     .to(coverImageCenter, 15, { y:-300, autoAlpha:1}, 'three-=5')
 
-    .fromTo(imageCoverSectionTextBlock2Child, 10, { y:300, autoAlpha:0}, { y:100, autoAlpha:1, stagger:0.3}, 'three-=1')
+    .fromTo(imageCoverSectionTextBlock2Child, 10,
+      {
+        y: 300, autoAlpha:0}, { y: isMobile ? 0 : isTab ? 0 : 100, autoAlpha:1, stagger:0.3
+      }, 'three-=1')
 
     // Animated Three1Cans
     const tl2 = gsap.timeline({
       scrollTrigger: {
         trigger: three1Cans,
-        start: "center center",
+        start: isMobile ? 'center center+=250' : isTab ? 'center center+=250' : isDesktop ? 'center center+=250' : 'center center',
         end: '+=2000 bottom',
         scrub: 1,
         pin: true
       }
     });
 
-    gsap.set('goldenInfo', {opacity: 0, y: '300%'})
+    gsap.set(goldenInfo, {opacity: 0, y: '300%'})
+    gsap.set(goldenTitle, {opacity: 0})
 
-    tl2.fromTo(can1One, 1, { x:0, y: 0, rotation:0 }, { x: '-50%', y: '-100%', rotation:25, transformOrigin:"top 100%" }, 'one-in' )
-    .fromTo(can1Two, 1, { y:0 }, { y: '-80%' }, 'one-in' )
-    .fromTo(can1Three, 1, { x:0, y: 0, rotation:0 }, { x: '50%', y: '-100%', rotation:-25, transformOrigin:"top 10%" }, 'one-in' )
+    tl2.fromTo(can1One, 1,
+      { x:0, y: 0, rotation:0 },
+      { x: '-50%', y: '-100%', rotation:25, transformOrigin:"top 100%" }, 'one-in' )
+    .fromTo(can1Two, 1,
+      { y:0 },
+      { y: '-80%' }, 'one-in' )
+    .fromTo(can1Three, 1,
+      { x:0, y: 0, rotation:0 },
+      { x: '50%', y: '-100%', rotation:-25, transformOrigin:"top 10%" }, 'one-in' )
     .fromTo(three1CansText, 1, { scale:0, autoAlpha: 0 }, { scale: 1 , autoAlpha: 1}, 'one-in')
 
     .fromTo(can1One, 2,
@@ -199,48 +231,101 @@ const changeTheColorToBlack = document.querySelector('.change-the-color-to-black
       { x: '-550%' },
       'one-out+=1')
     .fromTo(can1Three, 2,
-      { x: '50%', y: '-100%', rotation:-25, transformOrigin:"top 10%" },
-      { x: '550%' },
+      {
+        x: '50%', y: '-100%', rotation:-25, transformOrigin:"top 10%" },
+      { x: '550%', },
       'one-out+=1')
     .fromTo(three1CansText, 1,
       { scale:1, autoAlpha: 1 },
-      { scale: 0, autoAlpha: 0 },
+      { scale: 0, autoAlpha: 0 }, //translate(120%, -110%) rotate(40deg) scale(1.5)
       'one-out+=1' )
     .fromTo(can1Two, 1,
       { y: '-80%', x: 0, rotation:0 },
-      { y: isLaptop ? '-46%' : '-35%' , x: isLaptop ? '22%' : '10%', rotation:40, transformOrigin:"12% 12%" },
+      {
+        y: isMobile ? '-140%' : isTab ? '-100%' : isLaptop ? '-46%' : '-35%' ,
+        x: isMobile ? '140%' : isTab ? '90%' : isLaptop ? '22%' : '10%',
+        scale: isMobile ? 2 : isTab ? 1.5 : 1,
+        rotation:40, transformOrigin:"12% 12%" },
       'one-out+=1')
 
-    .fromTo(classicPath, 2, { x:2500 }, { x: 0 }, 'classic-in-=3')
+    .fromTo(classicPath, 2,
+      {
+        x: 2500
+      },
+      {
+        x: 0
+      }, 'classic-in-=3')
     .fromTo(blueTitle, 2, { x:1500, y: 1500, opacity: 0 }, { x: 0, y: 0, opacity: 1 }, 'classic-in-=3')
     .fromTo(blueTitle, 1, { scale: 1 }, { scale: 0.9 }, 'classic-info-in')
     .fromTo(blueInfo, 1, { y: 500, opacity: 0 }, { y: 0, opacity: 1 }, 'classic-info-in-=0.3')
 
     .fromTo(can1Two, 3,
-      { y: '-46%', x: '22%', rotation:40, transformOrigin:"12% 12%" },
+      {
+        y: isMobile ? '-140%' : isTab ? '-100%' : isLaptop ? '-46%' : '-35%' ,
+        x: isMobile ? '140%' : isTab ? '90%' : isLaptop ? '22%' : '10%',
+        rotation:40, transformOrigin:"12% 12%"
+      },
       { y: '-346%', x: '422%' },
       'classic-out')
     .fromTo(classicPath, 2, { x:0 }, { x: 2500 }, 'classic-out')
     .fromTo(can1Three, 1,
-      { y:0, x: '422%', rotation:0, scale:1  },
-      { y: '-46%', x: '22%', scale: 1.7, rotation:33, transformOrigin:"120% 60%" },
+      { y:0, x: '422%', rotation:0, scale: 1  },
+      {
+        y: isMobile ? '50%' : '-46%' ,
+        x: isMobile ? '50%' : '22%',
+        scale: isMobile ? 3 : 1.7,
+        rotation: isMobile ? 36 : 33 ,
+        transformOrigin:"120% 60%"
+      },
       'love-in-=3')
 
     .fromTo(loveEdition, 1, { x:-2500 }, { x: 0 }, 'love-in-=3')
     .fromTo(redTitle, 1.4, { x:-2500 }, { x: 0 }, 'love-in-=3')
-    .fromTo(loveEdition, 1, { x:0 }, { x: '45%' }, 'love-in-right')
-    .fromTo(redTitle, 1, { x:0, scale: 1 }, { x: '-78%', scale: 0.8 }, 'love-in-right')
+    .fromTo(loveEdition, 1, { x:0 },
+      {
+        x: isMobile ? '95%' : isTab ? '70%' : '45%',
+        y: isMobile ? 0 : isTab ? '68%' : 0,
+      }, 'love-in-right')
+    .fromTo(redTitle, 1, { x:0, scale: 1 },
+      {
+        x: isMobile ? '-250%' : isTab ? '-230%' : '-78%',
+        y: isMobile ? '75%' : isTab ? '-200%' : 0,
+        scale: 0.8
+      }, 'love-in-right')
     .fromTo(can1Three, 1,
-      { y: '-46%', x: '22%', scale: 1.7, rotation:33, transformOrigin:"120% 60%"  },
-      { x: '-180%'},
+      {
+        y: isMobile ? '50%' : '-46%' ,
+        x: isMobile ? '50%' : '22%',
+        scale: isMobile ? 3 : 1.7,
+        rotation: isMobile ? 36 : 33 ,
+        transformOrigin:"120% 60%"
+      },
+      {
+        x: isMobile ? '-50%' : isTab ? '-100%' : '-180%',
+        y: isMobile ? '-50%' : isTab ? '-100%' : '-46%',
+        scale: isMobile ? 3 : isTab ? 2 : 1.7
+      },
       'love-in-right')
-    .fromTo(redInfo, 1, { y: 500, opacity: 0 }, { y: 0, x: '-67.5%', opacity: 1 }, 'love-in-right+=0.7')
+    .fromTo(redInfo, 1, { y: 500, opacity: 0 },
+      {
+        y: isMobile ? '70%' : isTab ? '-250%' : 0,
+        x: isMobile ? '-270%' : isTab ? '-220%' : '-67.5%', // translate3d(-220%, -250%, 0px)
+        opacity: 1
+      }, 'love-in-right+=0.7')
 
-    .fromTo(loveEdition, 3, { x: '45%', }, { x: '200%', y: '-200%' }, 'love-out+=1')
-    .fromTo(can1Three, 2, { x: '-180%' }, { x: '200%', y: '-200%' }, 'love-out+=1')
+    .fromTo(loveEdition, 3, {
+      x: isMobile ? '95%' : isTab ? '85%' : '45%',
+      y: isTab ? '45%' : 0,
+     }, { x: '200%', y: '-200%' }, 'love-out+=1')
+    .fromTo(can1Three, 2,
+      {
+        x: isMobile ? '-50%' : isTab ? '-100%' : '-180%',
+        y: isMobile ? '-50%' : isTab ? '-100%' : '-46%',
+        scale: isMobile ? 3 : isTab ? 2 : 1.7
+      }, { x: '300%', y: '-300%' }, 'love-out+=1')
 
     .fromTo(goldenPath, 1, { x: '200%' }, { x: 0 }, 'golden-in-=2.8')
-    .fromTo(goldenTitle, 1, { x: '-400%' }, { x: 0 }, 'golden-in-=2.8')
+    .fromTo(goldenTitle, 1, { x: '-400%', opacity: 0 }, { x: 0, opacity: 1 }, 'golden-in-=2.8')
     .fromTo(can1One, 1, { x: '-550%' }, { x: '120%', y: isLaptop ? '-65%' : '-55%' , rotation:0, scale: 1.1 }, 'golden-in-=2.5')
 
     .fromTo(goldenPath, 1, { x: 0 }, { x: 0, height: '100%' }, 'golden-in-full')
