@@ -269,7 +269,7 @@ const changeTheColorToBlack = document.querySelector('.change-the-color-to-black
       },
       { y: '-346%', x: '422%' },
       'classic-out')
-    .fromTo(classicPath, 2, { x:0 }, { x: 3000 }, 'classic-out')
+    .fromTo(classicPath, 2, { x:0 }, { x: 5000 }, 'classic-out')
     .fromTo(can1Three, 1,
       { y:0, x: '422%', rotation:0, scale: 1  },
       {
@@ -326,16 +326,42 @@ const changeTheColorToBlack = document.querySelector('.change-the-color-to-black
       }, { x: '300%', y: '-300%' }, 'love-out+=1')
 
     .fromTo(goldenPath, 1, { x: '200%' }, { x: 0 }, 'golden-in-=2.8')
-    .fromTo(goldenTitle, 1, { x: '-400%', opacity: 0 }, { x: 0, opacity: 1 }, 'golden-in-=2.8')
-    .fromTo(can1One, 1, { x: '-550%' }, { x: '120%', y: isLaptop ? '-65%' : '-55%' , rotation:0, scale: 1.1 }, 'golden-in-=2.5')
+    .fromTo(goldenTitle, 1, { x: '-400%', opacity: 0 },
+      {
+        x: 0,
+        opacity: 1
+      }, 'golden-in-=2.8')
+    .fromTo(can1One, 1, { x: '-550%' },
+    {
+      x: isMobile ? '150%' : isTab ? '140%' : '120%',
+      y: isMobile ? '-80%' : isTab ? '-85%' : isLaptop ? '-65%' : '-55%' ,
+      scale: isMobile ? 2 : isTab ? 1.5 : 1.1,
+      rotation:0
+    }, 'golden-in-=2.5')
 
     .fromTo(goldenPath, 1, { x: 0 }, { x: 0, height: '100%' }, 'golden-in-full')
     .fromTo(can1One, 1,
       { x: '120%', y: isLaptop ? '-65%' : '-55%' , rotation:0, scale: 1.1 },
-      { y: isLaptop ? '-150%' : '-35%' , x: isLaptop ? '60%' : '60%', rotation:20, transformOrigin:"0% 0%", scale: 1.7 },
+      {
+        x: isMobile ? '100%' : isTab ? '150%' : isSmallLaptop ? '100%' : isLaptop ? '60%' : '60%',
+        y: isMobile ? '-250%' : isTab ? '-200%' :  isSmallLaptop ? '-135%' : isLaptop ? '-150%' : isDesktop ? '-170%' : '-35%' ,
+        rotation: isMobile ? 30 : isTab ? 40 : isSmallLaptop ? 40 : isDesktop ? 25 : 20,
+        scale: isMobile ? 2.5 : isTab ? 2 : isDesktop ? 2 : 1.7,
+        transformOrigin:"0% 0%"
+      },
       'golden-in-full')
-    .fromTo(goldenTitle, 1, { x: 0, scale: 1 }, { x: '23%', y: '180%', scale: 0.7 }, 'golden-in-full')
-    .fromTo(goldenInfo, 1, { y: '300%', opacity: 0 }, { x: '-33%', y: '130%', opacity: 1 }, 'golden-in')
+    .fromTo(goldenTitle, 1, { x: 0, scale: 1 },
+      {
+        x: isMobile ? '0%' : isTab ? '0%' : isSmallLaptop ? '15%' : isDesktop ? '15%' : '23%',
+        y: isMobile ? '730%' : isTab ? '380%' : isDesktop ? '250%' : '180%',
+        scale: isMobile ? 1.2 : isTab ? 1 : 0.7
+      }, 'golden-in-full')
+    .fromTo(goldenInfo, 1, { y: '300%', opacity: 0 },
+    {
+      x: isMobile ? '9%' : isTab ? '-25%' : isDesktop ? '-145%' : '-33%',
+      y: isMobile ? '220%' : isTab ? '220%' : isDesktop ? '230%' : '130%',
+      opacity: 1
+    }, 'golden-in')
 
   // Why Buffalo Timeline
   const tl3 = gsap.timeline({
@@ -355,31 +381,40 @@ const changeTheColorToBlack = document.querySelector('.change-the-color-to-black
     scrollTrigger: {
       trigger: doMoreSection,
       start: 'center center',
-      end: '+=100%',
-
-      endTrigger: '.last-do-more-list',
+      end: isMobile ? '+=550%' : '+=250%',
+      endTrigger: doMoreSection,
       scrub: bigDoMore,
       pin: true,
-    }
+      markers: true
+     }
   });
 
   tl4.fromTo( doMoreTextText, 1, { y: 500, opacity: 0 }, { y: 0, opacity: 1 }, "text-in-=1")
     .fromTo( doMoreTextText, 1, { y: 0, opacity: 1 }, { y: -1500, opacity: 0 }, "text-out+=0.1")
     .fromTo( doMoreTwoCans, 1, { y: 0, opacity: 1 }, { y: -1500, opacity: 0 }, "do-more-in")
     .fromTo( bigDoMore, 1, { x: 0, y: 500, opacity: 0 }, { x: 0, y: 0, opacity: 1 }, "do-more-in-=1")
-    .fromTo( bigDoMore, 1, { x: 0, scale: 1 }, { x: -290, scale: 0.35 }, "do-more-in")
+    .fromTo( bigDoMore, 1, { x: 0, scale: 1 },
+      {
+        x: isMobile ? -100 : isTab ? -200 : -290,
+        scale: isMobile ? 0.5 : isTab ? 0.25 : 0.35
+      }, "do-more-in")
     .fromTo( doMoreList, 1, { y: 500, x: 200, opacity: 0 }, { y: 300, x: 200, opacity: 1 }, "do-more-list-=1")
 
-    .to(".do-more-list", { duration: 3, yPercent: -200, ease: 'none' })
+    .to(".do-more-list",
+      {
+        duration: isMobile ? 2 : 3,
+        yPercent: isMobile ? -60 : isTab ? -125 : isSmallLaptop ? -215 : isLaptop ? -215 : -168,
+        ease: 'none'
+      })
     .to(".do-more-list li", {
 
       keyframes: {
         color: ['white', '#6b7280'],
       },
 
-      duration: 0.5,
+      duration: isMobile ? 0.2 : isTab ? 0.3 : isSmallLaptop ? 0.3 : isLaptop ? 0.3 : 0.3,
       stagger: {
-        amount: 2.4
+        amount: isMobile ? 1.7 : isTab ? 3 : isSmallLaptop ? 3.1 : isLaptop ? 3.1 : 3
       }
 
     }, '<');
@@ -398,9 +433,21 @@ const changeTheColorToBlack = document.querySelector('.change-the-color-to-black
 
     tl5.fromTo(moreByBuffaloTitle, 3, { y: '0%', scale: 1, opacity: 1 }, { y: '-50%', scale: 0.7, opacity: 0.6 }, 'one')
       .fromTo(moreByBuffaloInfo, 3, { y: '0%', scale: 1, opacity: 1 }, { y: '-50%', scale: 0.7, opacity: 0.6 }, 'one')
-      .fromTo(bottlePath, 2, { x:'-100%' }, { x:'0%', stagger:0.3}, 'two-=2')
-      .fromTo(bottleContainer, 5, { x:'-100%' }, { x:'50%', stagger:0.3}, 'two-=2')
-      .fromTo(bottlePath, 2, { x:'0%' }, { x:'100%', stagger:0.3}, 'three-=2')
+      .fromTo(bottlePath, isMobile ? 0.5 : isTab ? 0.5 : 2, { x:'-100%' },
+        {
+          x: '0%',
+          stagger:0.3
+        }, 'two-=2')
+      .fromTo(bottleContainer, isMobile ? 10 : isTab ? 10 : 5, { x:'-100%' },
+        {
+          x:'50%',
+          stagger:0.3
+        }, 'two-=2')
+      .fromTo(bottlePath, 2, { x:'0%' },
+        {
+          x:'100%',
+          stagger:0.3
+        }, 'three-=2')
 
     gsap.set(changeTheColorToBlack, {backgroundColor: 'white'});
 
@@ -420,7 +467,7 @@ const changeTheColorToBlack = document.querySelector('.change-the-color-to-black
     .fromTo(joinTheMovementOne, 1, { y: '0%', scale: 1}, { y: '-130%', scale: 0.8 }, 'one')
     .fromTo(joinTheMovementTwo, 1, { y: '200%', opacity: 0 }, { y: '0%', opacity: 1 }, 'one')
     .fromTo(joinTheMovementOne, 1, { y: '-140%', opacity: 1 }, { y: '-340%', opacity: 0 }, 'two+=1')
-    .fromTo(joinTheMovementTwo, 1, { y: '0%' }, { y: '-140%', color: 'white' }, 'two+=1')
+    .fromTo(joinTheMovementTwo, 1, { y: '0%' }, { y: isMobile ? '-250%' : isTab ? '-200%' : '-140%', color: 'white' }, 'two+=1')
     .to(changeTheColorToBlack, 1, { backgroundColor: '#000000' }, 'two+=1')
     .fromTo(joinTheMovementThree, 1, { y: '0%', opacity: 0 }, { y: '-220%', opacity: 1 }, 'two+=1')
     .to(events, 1, { y: '-20%', opacity: 1 }, 'two')
