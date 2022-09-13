@@ -109,7 +109,7 @@ const changeTheColorToBlack = document.querySelector('.change-the-color-to-black
       gsap.to('body', 0, { overflowY: 'scroll', overflowX: 'hidden' }, 'one')
       gsap.to(loginLogo, 0,
         {
-          y: isMobile ? '-440%' : isTab ? '-580%' : isSmallLaptop ? '-350%' : isLaptop ? '-295%' : '-780%' , scale: isMobile ? 0.5 : 0.6,
+          y: isMobile ? '-450%' : isTab ? '-580%' : isSmallLaptop ? '-350%' : isLaptop ? '-295%' : '-780%' , scale: isMobile ? 0.5 : 0.6,
           objectFit: 'cover', objectPosition: 'bottom', height: 70
         }, 'one')
       gsap.set(mainNavbarSwissLogo, { y: isMobile ? 25 : 30, x: isMobile ? -20 : 0, scale: isMobile ? 0.8 : 1 })
@@ -145,7 +145,9 @@ const changeTheColorToBlack = document.querySelector('.change-the-color-to-black
           .to('body', 1, { overflowY: 'scroll' }, 'one')
           .fromTo(loginLogo, 0.5,
               { y: '0%', scale: 1, objectFit: 'cover', objectPosition: 'bottom', height: 'auto'  },
-              { y: '-295%', scale: 0.6, objectFit: 'cover', objectPosition: 'bottom', height: 70 }, 'one')
+              {
+                y: isMobile ? '-445%' : isTab ? '-520%' : isSmallLaptop ? '-360%' : isLaptop ? '-300%' : '-780%' ,
+                scale: 0.6, objectFit: 'cover', objectPosition: 'bottom', height: 70 }, 'one')
       }
 
     })
