@@ -387,7 +387,6 @@ const changeTheColorToBlack = document.querySelector('.change-the-color-to-black
       endTrigger: doMoreSection,
       scrub: bigDoMore,
       pin: true,
-      markers: true
      }
   });
 
