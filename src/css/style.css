@@ -17,3 +17,7 @@ html,body {
 .block-span{
     @apply inline lg:block;
 }
+
+.scrollbar-hidden::-webkit-scrollbar {
+    width: 0px;
+}

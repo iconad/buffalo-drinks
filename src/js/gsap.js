@@ -178,7 +178,7 @@ const changeTheColorToBlack = document.querySelector('.change-the-color-to-black
       scrollTrigger: {
         trigger: imageCoverSection,
         start: "top top",
-        end: '+=2000 bottom',
+        end: isMobile ? '+=500 bottom' : '+=1000 bottom',
         endTrigger: imageCoverSectionTextBlock2Child,
         scrub: 1,
         pin: true,
@@ -270,8 +270,8 @@ const changeTheColorToBlack = document.querySelector('.change-the-color-to-black
         transformOrigin:"12% 12%"
       },
       { y: '-346%', x: '422%' },
-      'classic-out')
-    .fromTo(classicPath, 2, { x:0 }, { x: 5000 }, 'classic-out')
+      'classic-out+=1')
+    .fromTo(classicPath, 2, { x:0 }, { x: 5000 }, 'classic-out+=1')
     .fromTo(can1Three, 1,
       { y:0, x: '422%', rotation:0, scale: 1  },
       {
@@ -292,8 +292,8 @@ const changeTheColorToBlack = document.querySelector('.change-the-color-to-black
       }, 'love-in-right')
     .fromTo(redTitle, 1, { x:0, scale: 1 },
       {
-        x: isMobile ? '-250%' : isTab ? '-190%' : isSmallLaptop ? '-125%' : isDesktop ? '-50%' : '-78%',
-        y: isMobile ? '75%' : isTab ? '-80%' : isSmallLaptop ? '-10%' : isDesktop ? '-10%' : 0,
+        x: isMobile ? '-445%' : isTab ? '-190%' : isSmallLaptop ? '-125%' : isDesktop ? '-50%' : '-78%',
+        y: isMobile ? '200%' : isTab ? '-80%' : isSmallLaptop ? '-10%' : isDesktop ? '-10%' : 0,
         scale: 0.8
       }, 'love-in-right')
     .fromTo(can1Three, 1,
@@ -311,8 +311,8 @@ const changeTheColorToBlack = document.querySelector('.change-the-color-to-black
       'love-in-right')
     .fromTo(redInfo, 1, { y: 500, opacity: 0 },
       {
-        y: isMobile ? '70%' : isTab ? '-100%' : isSmallLaptop ? '-15%' : isDesktop ? '-40%' : 0,
-        x: isMobile ? '-270%' : isTab ? '-180%' : isSmallLaptop ? '-114.5%' : isDesktop ? '-39.5%' : '-67.5%',
+        x: isMobile ? '-145%' : isTab ? '-180%' : isSmallLaptop ? '-114.5%' : isDesktop ? '-39.5%' : '-67.5%',
+        y: isMobile ? '175%' : isTab ? '-100%' : isSmallLaptop ? '-15%' : isDesktop ? '-40%' : 0,
         opacity: 1
       }, 'love-in-right+=0.7')
 
@@ -354,14 +354,14 @@ const changeTheColorToBlack = document.querySelector('.change-the-color-to-black
       'golden-in-full')
     .fromTo(goldenTitle, 1, { x: 0, scale: 1 },
       {
-        x: isMobile ? '0%' : isTab ? '0%' : isSmallLaptop ? '15%' : isDesktop ? '15%' : '23%',
-        y: isMobile ? '730%' : isTab ? '380%' : isDesktop ? '250%' : '180%',
+        x: isMobile ? '-15%' : isTab ? '0%' : isSmallLaptop ? '15%' : isDesktop ? '15%' : '23%',
+        y: isMobile ? '600px' : isTab ? '380%' : isDesktop ? '250%' : '180%',
         scale: isMobile ? 1.2 : isTab ? 1 : 0.7
       }, 'golden-in-full')
     .fromTo(goldenInfo, 1, { y: '300%', opacity: 0 },
     {
-      x: isMobile ? '9%' : isTab ? '-25%' : isDesktop ? '-145%' : '-33%',
-      y: isMobile ? '220%' : isTab ? '220%' : isDesktop ? '230%' : '130%',
+      x: isMobile ? '2%' : isTab ? '-25%' : isDesktop ? '-145%' : '-33%',
+      y: isMobile ? '625px' : isTab ? '220%' : isDesktop ? '230%' : '130%',
       opacity: 1
     }, 'golden-in')
 
@@ -383,7 +383,7 @@ const changeTheColorToBlack = document.querySelector('.change-the-color-to-black
     scrollTrigger: {
       trigger: doMoreSection,
       start: 'center center',
-      end: isMobile ? '+=550%' : '+=250%',
+      end: isMobile ? '+=100%' : '+=250%',
       endTrigger: doMoreSection,
       scrub: bigDoMore,
       pin: true,
@@ -426,7 +426,7 @@ const changeTheColorToBlack = document.querySelector('.change-the-color-to-black
       scrollTrigger: {
         trigger: moreByBuffalo,
         start: "top top",
-        end: "+=2000 center",
+        end: isMobile ? "+=500 center" : "+=2000 center",
         scrub: 1,
         pin: colorfulBottles,
       }
@@ -457,7 +457,7 @@ const changeTheColorToBlack = document.querySelector('.change-the-color-to-black
       scrollTrigger: {
         trigger: joinTheMovement,
         start: "center center",
-        end: '+=1000',
+        end: isMobile ? '+=500' : '+=1000',
         scrub: 1,
         pin: true,
         pinSpacer: false
