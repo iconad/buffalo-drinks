@@ -224,8 +224,8 @@ const changeTheColorToBlack = document.querySelector('.change-the-color-to-black
       { x:0, y: 0, rotation:0 },
       { x: '-50%', y: '-100%', rotation:25, transformOrigin:"top 100%" }, 'one-in' )
     .fromTo(can1Two, 1,
-      { y:0 },
-      { y: '-80%' }, 'one-in' )
+      { y:0, scale: 1 },
+      { y: '-80%', }, 'one-in' )
     .fromTo(can1Three, 1,
       { x:0, y: 0, rotation:0 },
       { x: '50%', y: '-100%', rotation:-25, transformOrigin:"top 10%" }, 'one-in' )
@@ -327,10 +327,10 @@ const changeTheColorToBlack = document.querySelector('.change-the-color-to-black
       'love-in-right')
     .fromTo(redInfo, 1, { y: 500, opacity: 0 },
       {
-        x: isMobile ? '-120%' : isTab ? '-80%' : isSmallLaptop ? '-128%' : isDesktop ? '-34.5%' : '-83%',
-        y: isMobile ? '110%' : isTab ? '-175%' : isSmallLaptop ? '-35%' : isDesktop ? '-70%' : '-35%',
+        x: isMobile ? '-126.5%' : isTab ? '-80%' : isSmallLaptop ? '-128%' : isDesktop ? '-34.5%' : '-83%',
+        y: isMobile ? '100%' : isTab ? '-175%' : isSmallLaptop ? '-35%' : isDesktop ? '-70%' : '-35%',
         opacity: 1,
-        scale: isTab ? 0.8 : isDesktop ? 1 : 0.7
+        scale: isMobile ? 0.8 : isTab ? 0.8 : isDesktop ? 1 : 0.7
       }, 'love-in-right+=0.7')
 
     .fromTo(loveEdition, 3, {
