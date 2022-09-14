@@ -109,7 +109,7 @@ const changeTheColorToBlack = document.querySelector('.change-the-color-to-black
       // gsap.to('body', 0, {className: '-=overflow-y-hidden'}, 'one')
       gsap.to(loginLogo, 0,
         {
-          y: isMobile ? '-450%' : isTab ? '-580%' : isSmallLaptop ? '-350%' : isLaptop ? '-295%' : '-780%' , scale: isMobile ? 0.5 : 0.6,
+          y: isMobile ? '-385%' : isTab ? '-520%' : isSmallLaptop ? '-350%' : isLaptop ? '-295%' : '-780%' , scale: isMobile ? 0.5 : 0.6,
           objectFit: 'cover', objectPosition: 'bottom', height: 70
         }, 'one')
       gsap.set(mainNavbarSwissLogo, { y: isMobile ? 25 : 30, x: isMobile ? -20 : 0, scale: isMobile ? 0.8 : 1 })
@@ -148,8 +148,9 @@ const changeTheColorToBlack = document.querySelector('.change-the-color-to-black
           .fromTo(loginLogo, 0.5,
               { y: '0%', scale: 1, objectFit: 'cover', objectPosition: 'bottom', height: 'auto'  },
               {
-                y: isMobile ? '-445%' : isTab ? '-520%' : isSmallLaptop ? '-360%' : isLaptop ? '-300%' : '-780%' ,
-                scale: 0.6, objectFit: 'cover', objectPosition: 'bottom', height: 70 }, 'one')
+                y: isMobile ? '-385%' : isTab ? '-520%' : isSmallLaptop ? '-360%' : isLaptop ? '-300%' : '-780%' ,
+                scale: 0.6,
+                objectFit: 'cover', objectPosition: 'bottom', height: 70 }, 'one')
       }
 
     })
@@ -166,11 +167,11 @@ const changeTheColorToBlack = document.querySelector('.change-the-color-to-black
 
     tlNavbar.to(mainNavbar, 1, { height: 50 }, 'one')
       .to(mainNavbarSwissLogoLg, 0.5, { y: -10, opacity: 0 }, 'one')
-      .to(mainNavbarSwissLogoSm, 1, { y: isMobile ? -23 : -13, opacity: 1 }, 'one')
-      .to(mainNavbarBurgerIcon, 1, { y: isMobile ? -30 : -24, scale: 0.7 }, 'one')
+      .to(mainNavbarSwissLogoSm, 1, { y: isMobile ? -25 : -13, opacity: 1 }, 'one')
+      .to(mainNavbarBurgerIcon, 1, { y: isMobile ? -25 : -24, scale: 0.7 }, 'one')
       .to(loginLogo, 0.5,
         {
-          y: isMobile ? '-336%' : isTab ? '-429%' : isSmallLaptop ? '-270%' : isLaptop ? '-232%' : '-572%' , scale: isMobile ? 0.3 : 0.4, objectFit: 'cover', objectPosition: 'top', height: 100
+          y: isMobile ? '-300%' : isTab ? '-387%' : isSmallLaptop ? '-270%' : isLaptop ? '-232%' : '-572%' , scale: isMobile ? 0.3 : 0.4, objectFit: 'cover', objectPosition: 'top', height: 100
         }, 'one')
 
 
@@ -246,11 +247,12 @@ const changeTheColorToBlack = document.querySelector('.change-the-color-to-black
     .fromTo(can1Two, 1,
       { y: '-80%', x: 0, rotation:0 },
       {
-        x: isMobile ? '100%' : isTab ? '90%' : isLaptop ? '22%' : isDesktop ? '50%' : '10%',
-        y: isMobile ? '-120%' : isTab ? '-100%' : isLaptop ? '-46%' : isDesktop ? '-80%' : '-35%' ,
-        scale: isMobile ? 1.5 : isTab ? 1.5 : isDesktop ? 1.5 : 1,
+        x: isMobile ? '100%' : isTab ? '65%' : isLaptop ? '22%' : isDesktop ? '50%' : '10%',
+        y: isMobile ? '-120%' : isTab ? '-80%' : isLaptop ? '-46%' : isDesktop ? '-80%' : '-35%' ,
+        scale: isMobile ? 1.5 : isTab ? 1 : isDesktop ? 1.5 : 1,
         rotation: isDesktop ? 35 : 40,
-        transformOrigin:"12% 12%" },
+        transformOrigin:"12% 12%"
+      },
       'one-out+=1')
 
     .fromTo(classicPath, 2,
@@ -261,14 +263,24 @@ const changeTheColorToBlack = document.querySelector('.change-the-color-to-black
         x: 0
       }, 'classic-in-=3')
     .fromTo(blueTitle, 2, { x:1500, y: 1500, opacity: 0 }, { x: 0, y: 0, opacity: 1 }, 'classic-in-=3')
-    .fromTo(blueTitle, 1, { scale: 1 }, { scale: 0.9 }, 'classic-info-in')
-    .fromTo(blueInfo, 1, { y: 500, opacity: 0 }, { y: 0, opacity: 1 }, 'classic-info-in-=0.3')
+    .fromTo(blueTitle, 1, { scale: 1 },
+      {
+        scale: isLaptop ? 0.7 : 0.9
+      }, 'classic-info-in')
+    .fromTo(blueInfo, 1, { y: 500, opacity: 0 },
+      {
+        x: isLaptop ? '1%' : 0,
+        y: isLaptop ? '-14%' : 0,
+        opacity: 1 ,
+        scale: isLaptop ? 0.8 : 1
+      }, 'classic-info-in-=0.3')
 
     .fromTo(can1Two, 3,
       {
-        x: isMobile ? '100%' : isTab ? '90%' : isLaptop ? '22%' : isDesktop ? '50%' : '10%',
-        y: isMobile ? '-120%' : isTab ? '-100%' : isLaptop ? '-46%' : isDesktop ? '-80%' : '-35%' ,
-        rotation:40,
+        x: isMobile ? '100%' : isTab ? '65%' : isLaptop ? '22%' : isDesktop ? '50%' : '10%',
+        y: isMobile ? '-120%' : isTab ? '-80%' : isLaptop ? '-46%' : isDesktop ? '-80%' : '-35%' ,
+        scale: isMobile ? 1.5 : isTab ? 1 : isDesktop ? 1.5 : 1,
+        rotation: isDesktop ? 35 : 40,
         transformOrigin:"12% 12%"
       },
       { y: '-346%', x: '422%' },
@@ -289,33 +301,36 @@ const changeTheColorToBlack = document.querySelector('.change-the-color-to-black
     .fromTo(redTitle, 1.4, { x:-3000 }, { x: 0 }, 'love-in-=3')
     .fromTo(loveEdition, 1, { x:0 },
       {
-        x: isMobile ? '80%' : isTab ? '70%' : isSmallLaptop ? '60%' : isDesktop ? '32%' : '45%',
-        y: isMobile ? 0 : isTab ? '68%' : 0,
+        x: isMobile ? '80%' : isTab ? '55%' : isSmallLaptop ? '60%' : isDesktop ? '32%' : '45%',
+        y: isMobile ? 0 : isTab ? '105%' : 0,
       }, 'love-in-right')
     .fromTo(redTitle, 1, { x:0, scale: 1 },
       {
-        x: isMobile ? '-370%' : isTab ? '-190%' : isSmallLaptop ? '-125%' : isDesktop ? '-50%' : '-78%',
-        y: isMobile ? '120%' : isTab ? '-80%' : isSmallLaptop ? '-10%' : isDesktop ? '-10%' : 0,
-        scale: 0.8
+        x: isMobile ? '-370%' : isTab ? '-230%' : isSmallLaptop ? '-360%' : isDesktop ? '-125%' : '-225%',
+        y: isMobile ? '120%' : isTab ? '-120%' : isSmallLaptop ? '-10%' : isDesktop ? '-10%' : '-10%',
+        scale: 0.6
       }, 'love-in-right')
     .fromTo(can1Three, 1,
       {
-        x: isMobile ? '90%' : isTab ? '70%' : isSmallLaptop ? '60%' : isDesktop ? '32%' : '45%',
-        y: isMobile ? 0 : isTab ? '68%' : 0,
+        x: isMobile ? '90%' : isDesktop ? '270%' : '22%',
+        y: isMobile ? '20%' : isDesktop ? '-50%' : '-46%',
         scale: isMobile ? 2.5 : isDesktop ? 3 : 1.7,
+        rotation: isMobile ? 36 : 33 ,
+        transformOrigin:"120% 60%"
       },
       {
-        x: isMobile ? '0%' : isTab ? '-100%' : isDesktop ? '-160%' : '-180%',
-        y: isMobile ? '-130%' : isTab ? '-100%' : isDesktop ? '-80%' : '-46%',
-        rotation: 37,
-        scale: isMobile ? 2.5 : isTab ? 2 : isDesktop ? 2.5 : 1.7
+        x: isMobile ? '0%' : isTab ? '-90%' : isDesktop ? '-160%' : '-180%',
+        y: isMobile ? '-130%' : isTab ? '-115%' : isDesktop ? '-80%' : '-46%',
+        rotation: isTab ? 40 : 37,
+        scale: isMobile ? 2.5 : isTab ? 1.7 : isDesktop ? 2.5 : 1.7
       },
       'love-in-right')
     .fromTo(redInfo, 1, { y: 500, opacity: 0 },
       {
-        x: isMobile ? '-120%' : isTab ? '-180%' : isSmallLaptop ? '-114.5%' : isDesktop ? '-39.5%' : '-67.5%',
-        y: isMobile ? '110%' : isTab ? '-100%' : isSmallLaptop ? '-15%' : isDesktop ? '-40%' : 0,
-        opacity: 1
+        x: isMobile ? '-120%' : isTab ? '-80%' : isSmallLaptop ? '-128%' : isDesktop ? '-34.5%' : '-83%',
+        y: isMobile ? '110%' : isTab ? '-175%' : isSmallLaptop ? '-35%' : isDesktop ? '-70%' : '-35%',
+        opacity: 1,
+        scale: isTab ? 0.8 : isDesktop ? 1 : 0.7
       }, 'love-in-right+=0.7')
 
     .fromTo(loveEdition, 3, {
@@ -358,13 +373,14 @@ const changeTheColorToBlack = document.querySelector('.change-the-color-to-black
       {
         x: isMobile ? '-10%' : isTab ? '0%' : isSmallLaptop ? '15%' : isDesktop ? '15%' : '23%',
         y: isMobile ? '525px' : isTab ? '380%' : isDesktop ? '250%' : '180%',
-        scale: isMobile ? 0.7 : isTab ? 1 : 0.7
+        scale: isMobile ? 0.7 : isTab ? 1 : 0.6
       }, 'golden-in-full')
     .fromTo(goldenInfo, 1, { y: '300%', opacity: 0 },
     {
-      x: isMobile ? '2%' : isTab ? '-25%' : isDesktop ? '-145%' : '-33%',
-      y: isMobile ? '525px' : isTab ? '220%' : isDesktop ? '230%' : '130%',
-      opacity: 1
+      x: isMobile ? '2%' : isTab ? '-25%' : isDesktop ? '-134%' : '-35%',
+      y: isMobile ? '525px' : isTab ? '220%' : isDesktop ? '230%' : '125%',
+      opacity: 1,
+      scale: isLaptop ? 0.8 : 1
     }, 'golden-in')
 
   // Why Buffalo Timeline
@@ -441,7 +457,7 @@ const changeTheColorToBlack = document.querySelector('.change-the-color-to-black
           x: '0%',
           stagger:0.3
         }, 'two-=2')
-      .fromTo(bottleContainer, isMobile ? 10 : isTab ? 10 : 5, { x:'-100%' },
+      .fromTo(bottleContainer, isMobile ? 10 : isTab ? 10 : 5, { x:'-130%' },
         {
           x:'50%',
           stagger:0.3
