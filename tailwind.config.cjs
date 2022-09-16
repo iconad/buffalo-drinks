@@ -2,6 +2,8 @@
 module.exports = {
   content: [
     "./index.html",
+    "./about.html",
+    "./distributor.html",
     "./src/**/*.{vue,js,ts,jsx,tsx}",
   ],
   theme: {
@@ -12,6 +14,13 @@ module.exports = {
       },
       fontFamily: {},
       colors: {
+        'theme-orange': '#F3982C',
+        'theme-golden': '#A88E4A',
+        'theme-dark-sky': '#00B2D7',
+        'theme-sky': '#2CB0F8',
+        'theme-green': '#55A932',
+        'theme-dark-red': '#C72028',
+        'theme-red': '#FF3737',
         'theme-cyan': '#00B1D6',
         'theme-viking': '#56C8E0',
         'theme-pacific-blue': '#009CBC',
@@ -32,6 +41,7 @@ module.exports = {
       fontFamily: {
         'poppin': 'Poppins',
         'bebas': 'Bebas Neue',
+        'hand': 'Gochi Hand',
       },
       height: {
         'screen-50': '50vh',
