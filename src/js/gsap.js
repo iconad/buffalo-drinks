@@ -91,8 +91,9 @@ const changeTheColorToBlack = document.querySelector('.change-the-color-to-black
       let username = "yes";
     }
 
-    if(!username) {
+    if(!localStorage.getItem("username")) {
 
+      console.log(username)
       gsap.set(userNameSection, {opacity: 0})
 
 
@@ -273,7 +274,7 @@ const changeTheColorToBlack = document.querySelector('.change-the-color-to-black
       }, 'classic-info-in')
     .fromTo(blueInfo, 1, { y: 500, opacity: 0, scale: 0.6 },
       {
-        x: isLaptop ? '1%' : 0,
+        x: isLaptop ? '7%' : 0,
         y: isLaptop ? '-14%' : 0,
         opacity: 1 ,
         scale: isLaptop ? 0.8 : isDesktop ? 1 : 1
@@ -414,7 +415,7 @@ const changeTheColorToBlack = document.querySelector('.change-the-color-to-black
 
   tl4.fromTo( doMoreTextText, 1, { y: 500, opacity: 0 }, { y: 0, opacity: 1 }, "text-in-=1")
     .fromTo( doMoreTextText, 1, { y: 0, opacity: 1 }, { y: -1500, opacity: 0 }, "text-out+=0.1")
-    .fromTo( doMoreTwoCans, 1, { y: 0, opacity: 1 }, { y: -1500, opacity: 0 }, "do-more-in")
+    .fromTo( doMoreTwoCans, 1, { y: 0, opacity: 1 }, { y: -1500, opacity: 0 }, isMobile ? "text-in-=1" : "do-more-in")
     .fromTo( bigDoMore, 1, { x: 0, y: 500, opacity: 0 }, { x: 0, y: 0, opacity: 1 }, "do-more-in-=1")
     .fromTo( bigDoMore, 1, { x: 0, scale: 1 },
       {
