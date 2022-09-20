@@ -52,3 +52,18 @@ html,body {
     @apply w-[20px] sm:w-[50px] h-[20px] sm:h-[50px];
 }
 
+
+.classic-can:after {
+    content: "";
+    @apply absolute w-[200%] h-[200%] bg-black top-0 right-[50%] -z-[1]
+    /* border-bottom: 100vh solid #009CBC;
+    border-left: 30vw solid transparent; */
+}
+
+
+.love-edition-can:after {
+    content: "";
+    @apply absolute w-[200%] h-[200%] bg-black top-0 left-[50%] -z-[1]
+    /* border-bottom: 100vh solid #009CBC;
+    border-left: 30vw solid transparent; */
+}

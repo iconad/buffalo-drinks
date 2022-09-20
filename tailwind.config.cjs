@@ -2,6 +2,7 @@
 module.exports = {
   content: [
     "./index.html",
+    "./home.html",
     "./about.html",
     "./distributor.html",
     "./src/**/*.{vue,js,ts,jsx,tsx}",
