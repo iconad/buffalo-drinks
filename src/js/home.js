@@ -188,7 +188,7 @@ let matchMedia = gsap.matchMedia()
     const tl2 = gsap.timeline({
         scrollTrigger: {
             trigger: three1Cans,
-            start: isMobile ? 'center center' : isTab ? 'center center+=250' : isLaptop ? 'center center+=160' : isDesktop ? 'center center' : 'center center',
+            start: isMobile ? 'center+=180 center' : isTab ? 'center+=50 center' : isSmallLaptop ? 'center-=180 center' :  isLaptop ? 'center-=180 center' : isDesktop ? 'center center+=180' : 'center center',
             end: '+=3000',
             scrub: 1,
             pin: true,
