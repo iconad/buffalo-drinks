@@ -188,7 +188,7 @@ let matchMedia = gsap.matchMedia()
     const tl2 = gsap.timeline({
         scrollTrigger: {
             trigger: three1Cans,
-            start: isMobile ? 'center+=200 center' : 'center-=170 center',
+            start: isMobile ? 'center center' : isTab ? 'center center+=250' : isLaptop ? 'center center+=160' : isDesktop ? 'center center' : 'center center',
             end: '+=3000',
             scrub: 1,
             pin: true,
@@ -230,17 +230,17 @@ let matchMedia = gsap.matchMedia()
         'one-out+=0.5')
 
 
-        .fromTo(classicPath, 1, { x: 3000 } , { x: 0 }, 'classic-in-=2.2')
-        .fromTo(classicCan, 1, { y: -3000 } , { y: 0 }, 'classic-in-=2.2')
+        .fromTo(classicPath, 1, { x: 3000, opacity: 0 } , { x: 0, opacity: 1 }, 'classic-in-=2.2')
+        .fromTo(classicCan, 1, { y: -3000, opacity: 0 } , { y: 0, opacity: 1 }, 'classic-in-=2.2')
 
-        .fromTo(classicPath, 1, { x: 0 } , { x: 3000 }, 'classic-out+=1')
-        .fromTo(classicCan, 1, { y: 0 } , { y: -3000 }, 'classic-out+=1')
+        .fromTo(classicPath, 1, { x: 0, opacity: 0 } , { x: 3000, opacity: 1 }, 'classic-out+=1')
+        .fromTo(classicCan, 1, { y: 0, opacity: 0 } , { y: -3000, opacity: 1 }, 'classic-out+=1')
 
-        .fromTo(loveEdition, 1, { x: -3000 } , { x: 0 }, 'love-in-=1.2')
-        .fromTo(loveEditionCan, 1, { y: -3000 } , { y: 0 }, 'love-in-=1.2')
+        .fromTo(loveEdition, 1, { x: -3000, opacity: 0 } , { x: 0, opacity: 1 }, 'love-in-=1.2')
+        .fromTo(loveEditionCan, 1, { y: -3000, opacity: 0 } , { y: 0, opacity: 1 }, 'love-in-=1.2')
 
-        .fromTo(loveEdition, 1, { x: 0 } , { x: -3000 }, 'love-out+=1')
-        .fromTo(loveEditionCan, 1, { y: 0 } , { y: -3000 }, 'love-out+=1')
+        .fromTo(loveEdition, 1, { x: 0, opacity: 0 } , { x: -3000, opacity: 1 }, 'love-out+=1')
+        .fromTo(loveEditionCan, 1, { y: 0, opacity: 0 } , { y: -3000, opacity: 1 }, 'love-out+=1')
 
         .fromTo(goldenPath, 1, { x: -3000 } , { x: 0 }, 'golden-in-=1.2')
         .fromTo(goldenCan, 1, { y: -3000 } , { y: 0 }, 'golden-in-=1.2')
@@ -253,7 +253,7 @@ let matchMedia = gsap.matchMedia()
     const tl4 = gsap.timeline({
         scrollTrigger: {
         trigger: whyBuffalloSection,
-        start: "top center",
+        start: "top center+=20%",
         end: "center center",
         scrub: 1
         }
