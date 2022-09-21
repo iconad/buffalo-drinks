@@ -103,11 +103,14 @@ let matchMedia = gsap.matchMedia()
     gsap.set(mainNavbarMainLogo,
         {
             zIndex: 111,
-            x: '-45px',
             y: isMobile ? '35vh' : isTab ? '35vh' : isDesktop ? '40vh' : '35vh',
             scale: 2
         })
     }else{
+
+        const uname = document.querySelector('#userName')
+        uname.innerHTML =  localStorage.getItem("username");
+
         gsap.set(loginWrapper, {opacity: 0, display: 'none'})
         gsap.set(hideOnLogin, {opacity: 0})
         gsap.to(userNameSection, 0.5, { opacity: 1 })
@@ -213,31 +216,31 @@ let matchMedia = gsap.matchMedia()
       .fromTo(can1One, 2,
         { x: '-50%', y: '-100%', rotation:25, transformOrigin:"top 100%" },
         { x: '-550%' },
-        'one-out+=0.5')
+        'one-out+=1')
       .fromTo(can1Three, 2,
         {
           x: '50%', y: '-100%', rotation:-25, transformOrigin:"top 10%" },
         { x: '550%', },
-        'one-out+=0.5')
+        'one-out+=1')
       .fromTo(three1CansText, 1,
         { scale:1, autoAlpha: 1 },
         { scale: 0, autoAlpha: 0 }, //translate(120%, -110%) rotate(40deg) scale(1.5)
-        'one-out+=0.5' )
+        'one-out+=1' )
       .fromTo(can1Two, 1,
         { y: '-80%', x: 0, rotation:0 },
         {
           x: '0%',
           y: '-235%' ,
         },
-        'one-out+=0.5')
+        'one-out+=1')
 
 
         .fromTo(classicPath, 2, { x: isMobile ? 0 :  2000, opacity: 0 } , { x: 0, opacity: 1 }, 'classic-in-=2.2')
         .fromTo(classicCan, 2, { y:  isMobile ? -1000 : -2000, opacity: 0 } , { y: 0, opacity: 1 }, 'classic-in-=2.2')
-        .to(upperThreeCans, 0, { display: 'none' }, 'classic-in-=2.2')
 
         .fromTo(classicPath, 2, { x: 0, opacity: 1 } , { x: isMobile ? 0 :  2000, opacity: 0 }, 'classic-out+=1')
         .fromTo(classicCan, 2, { y: 0, opacity: 1 } , { y:  isMobile ? -1000 : -2000, opacity: 0 }, 'classic-out+=1')
+        .to(upperThreeCans, 0, { display: 'none' }, 'classic-out')
 
         .fromTo(loveEdition, 2, { x:  isMobile ? 0 : -2000, opacity: 0 } , { x: 0, opacity: 1 }, 'love-in-=1.6')
         .fromTo(loveEditionCan, 2, { y:  isMobile ? -1000 : -2000, opacity: 0 } , { y: 0, opacity: 1 }, 'love-in-=1.6')
