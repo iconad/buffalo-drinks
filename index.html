@@ -13,23 +13,23 @@
 
 
 
-      <div class="main-navbar w-full bg-theme-dark-gray fixed left-0 top-0 z-50">
+      <div class="main-navbar w-full bg-theme-dark-gray fixed left-0 top-0 z-[60]">
         <div class="theme-container text-white">
             <div class="flex align-center justify-between">
 
-              <div class="main-navbar_swis_logo flex flex-col justify-center items-center relative">
-                <img src="/images/swis.svg" class="w-32 main-navbar_swis_logo_lg" alt="swis logo">
-                <img src="/images/swis-sm.svg" class="w-36 main-navbar_swis_logo_sm" alt="swis logo">
+              <div class="w-full main-navbar_swis_logo flex flex-col justify-center items-center relative">
+                <img src="/images/swis.svg" class="w-32 main-navbar_swis_logo_lg mr-auto" alt="swis logo">
+                <img src="/images/flag.svg" class="w-12 main-navbar_swis_logo_sm  mr-auto" alt="swis logo">
               </div>
               <!-- swis logo -->
 
-              <div class="main-navbar_main_logo flex items-center py-5 sm:py-10">
-                <img src="/images/logo-sm.svg" alt="logo" class="h-10">
-              </div>
+              <a href="index.html" class="w-full main-navbar_main_logo flex items-center py-6 sm:py-2">
+                <img src="/images/logo-sm.svg" alt="logo" class="h-8 mx-auto">
+              </a>
               <!-- main logo -->
 
-              <div class="main-navbar_burger cursor-pointer flex items-center z-10">
-                <img src="/images/burger.svg" class="fill-current w-10 main-navbar_burger_icon" alt="Logo">
+              <div class="w-full main-navbar_burger cursor-pointer flex items-center z-10">
+                <img src="/images/burger.svg" class="fill-current w-10 main-navbar_burger_icon ml-auto" alt="Logo">
               </div>
               <!-- burger -->
 
@@ -37,6 +37,23 @@
         </div>
       </div>
       <!-- site navbar -->
+
+      <div class="mega-menu h-screen w-full fixed inset-0 bg-theme-dark-gray flex items-center justify-center text-white text-center">
+
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" id="closeMegaMenu" stroke-width="1.5" stroke="currentColor" class="w-10 h-10 absolute right-10 top-10 text-white cursor-pointer hover:scale-105 transition-all">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+
+
+        <ul class="text-5xl sm:text-7xl uppercase font-bebas space-y-3">
+          <li class="mm-li"> <a href="index.html" class="hover:text-theme-pacific-blue"> Home </a> </li>
+          <li class="mm-li"> <a href="about.html" class="hover:text-theme-pacific-blue"> About Us </a> </li>
+          <li class="mm-li"> <a href="about.html#portfolioSection" class="hover:text-theme-pacific-blue"> Our Products </a></li>
+          <li class="mm-li"> <a href="distributor.html" class="hover:text-theme-pacific-blue"> Distribute </a> </li>
+          <li class="mm-li"> <a href="index.html#joinTheMovement" class="hover:text-theme-pacific-blue"> Join The Movment </a> </li>
+        </ul>
+      </div>
+      <!-- mega menu -->
 
       <div class="fixed inset-0 flex items-center justify-center w-full h-screen login-wrapper z-50">
         <div class="h-full w-1/2 bg-opacity-50 flex items-center justify-center text-white relative">
@@ -142,7 +159,7 @@
 
         <div class="theme-container relative">
 
-            <div class="flex items-end justify-center relative z-10">
+            <div class="flex items-end justify-center relative z-10 upper-three-cans">
 
                 <div class="w-1/3 can-1">
                   <img src="/images/can1.png" class="w-5/6 ml-auto" alt="can">
@@ -160,7 +177,7 @@
                 <div class="text-center w-full space-y-5">
                 <h2 class="text-3xl sm:text-5xl w-5/6 lg:w-full mx-auto font-black">GET READY TO DO MORE!</h2>
                 <p class="text-xl sm:text-2xl lg:text-4xl w-5/6 lg:w-full mx-auto space-y-2">
-                    <span class="block-span font-extralight">with 3 different editins made for the</span>
+                    <span class="block-span font-extralight">with 3 different editions made for the</span>
                     <span class="block-span font-extralight">adventurous, the seekers, the doers,</span>
                     <span class="block-span font-extralight text-theme-cyan">& for everyone, literally!</span>
                 </p>
@@ -171,15 +188,15 @@
 
         <div class="clip-paths absolute inset-0">
 
-            <div class="classic-path h-screen w-full ml-auto bg-theme-dark-sky relative z-[11] absolute inset-0 overflow-hidden">
+            <div class="classic-path h-screen w-full sm:w-[90vw] ml-auto bg-theme-dark-sky relative z-[11] absolute inset-0 overflow-hidden">
 
-                <div class="classic-can h-[80vh] lg:h-[100vh] absolute -top-[20vh] left-[10%] rotate-[15deg] sm:rotate-[20deg] lg:rotate-[28deg] top-0 z-[2] prevent-pointer">
+                <div class="classic-can h-[80vh] lg:h-[100vh] absolute -top-[20vh] left-[12%] sm:left-[10%] rotate-[0deg] sm:rotate-[20deg] lg:rotate-[28deg] top-0 z-[2] prevent-pointer">
                     <img src="/images/can2.png" class="h-full" alt="can">
                 </div>
 
                 <div class="blue-info absolute h-[100vh] inset-0 w-full p-10 flex items-end lg:items-center justify-end pb-16 sm:pb-36 lg:pb-0 z-1">
-                    <div class="space-y-4 lg:space-y-6 w-4/5 lg:w-2/3">
-                        <h2 class="text-5xl sm:text-7xl lg:text-9xl font-bold text-white uppercase blue-title">CLASSIC</h2>
+                    <div class="space-y-4 lg:space-y-6 w-5/6 sm:w-4/5 lg:w-2/3 mx-auto mx-auto sm:mx-0 sm:ml-auto">
+                        <h2 class="font-bebas text-5xl sm:text-7xl lg:text-9xl xl:text-[10rem] font-bold text-white uppercase blue-title">CLASSIC</h2>
                         <div class="space-y-2">
                             <div class="text-2xl lg:text-4xl font-bold text-white">
                                 <span class="inline sm:block">made to inspire and</span>
@@ -188,7 +205,7 @@
                             <p class="text-sm lg:text-xl 2xl:text-2xl font-medium text-white">to own your moment & live to the most</p>
                         </div>
                         <div>
-                            <a href="/" class="mt-2 lg:mt-5 classic-link inline-block px-2 sm:px-4 py-1 sm:py-2 rounded bg-white text-theme-dark-sky sm:text-xl 2xl:text-3xl font-medium hover:bg-gree-500"> Discover Classic </a>
+                            <a href="about.html#portfolioSection" class="mt-2 lg:mt-5 classic-link inline-block px-2 sm:px-4 py-1 sm:py-2 rounded bg-white text-theme-dark-sky sm:text-xl 2xl:text-3xl font-medium hover:bg-gree-500"> Discover Classic </a>
                             </div>
                     </div>
                 </div>
@@ -198,9 +215,12 @@
 
             <div class="love-edition-path h-screen w-full ml-auto bg-theme-dark-red z-[10] absolute inset-0">
 
-                <div class="red-info absolute h-[100vh] inset-0 w-full p-10 flex items-end sm:items-center lg:items-center justify-start sm:justify-center pb-8 sm:pb-32 lg:pb-12 z-10">
-                    <div class="space-y-4 lg:space-y-6 w-4/5 lg:w-2/3">
-                        <h2 class="text-5xl sm:text-7xl lg:text-9xl font-bold text-white">LOVE EDITION</h2>
+                <div class="red-info absolute h-[100vh] inset-0 w-full p-10 flex items-end sm:items-center lg:items-center justify-start sm:justify-center pb-16 sm:pb-32 lg:pb-12 z-10">
+                    <div class="space-y-4 lg:space-y-6 w-5/6 sm:w-4/5 lg:w-2/3 mx-auto sm:mr-auto">
+                        <h2 class="font-bebas text-5xl sm:text-7xl lg:text-9xl xl:text-[10rem] font-bold text-white">
+                          <span class="inline sm:block">LOVE</span>
+                          <span class="inline sm:block">EDITION</span>
+                        </h2>
                         <div class="space-y-2">
                             <div class="text-2xl lg:text-4xl font-bold text-white">
                                 <span class="block">Made for the</span>
@@ -213,13 +233,13 @@
                             </p>
                         </div>
                         <div>
-                            <a href="/" class="mt-2 lg:mt-5 red-link inline-block px-2 sm:px-4 py-1 sm:py-2 rounded bg-white text-theme-dark-red sm:text-xl 2xl:text-3xl font-medium hover:bg-gree-500"> Discover Love Edition </a>
+                            <a href="about.html#portfolioSection" class="mt-2 lg:mt-5 red-link inline-block px-2 sm:px-4 py-1 sm:py-2 rounded bg-white text-theme-dark-red sm:text-xl 2xl:text-3xl font-medium hover:bg-gree-500"> Discover Love Edition </a>
                             </div>
                     </div>
                 </div>
 
 
-                <div class="love-edition-can h-[80vh] lg:h-[100vh] absolute -top-[20vh] right-[10%] -rotate-[15deg] sm:-rotate-[20deg] lg:-rotate-[28deg] top-0 z-[10] prevent-pointer">
+                <div class="love-edition-can h-[80vh] lg:h-[100vh] absolute -top-[30vh] sm:-top-[20vh] right-[18%] sm:right-[20%] -rotate-[0deg] sm:-rotate-[20deg] lg:-rotate-[28deg] top-0 z-[10] prevent-pointer">
                     <img src="/images/can3.png" class="h-full relative" alt="can">
                 </div>
 
@@ -229,13 +249,13 @@
 
             <div class="golden-path h-screen w-full ml-auto bg-theme-golden absolute inset-0">
 
-                <div class="golden-can h-[80vh] lg:h-[100vh] absolute -top-[30vh] sm:-top-[20vh] left-[10%] rotate-[15deg] sm:rotate-[20deg] lg:rotate-[28deg] top-0 z-[2] prevent-pointer">
+                <div class="golden-can h-[80vh] lg:h-[100vh] absolute -top-[30vh] sm:-top-[20vh] left-[12%] sm:left-[10%] rotate-[0deg] sm:rotate-[20deg] lg:rotate-[28deg] top-0 z-[2] prevent-pointer">
                     <img src="/images/can1.png" class="h-full" alt="can">
                 </div>
 
                 <div class="golden-info absolute h-[100vh] inset-0 w-full p-10 flex items-end lg:items-center justify-end pb-16 sm:pb-36 lg:pb-0">
-                    <div class="space-y-4 lg:space-y-6 w-full sm:w-4/5 lg:w-2/3">
-                        <h2 class="text-5xl sm:text-7xl lg:text-9xl font-bold text-white uppercase">GOLD EDITION</h2>
+                    <div class="space-y-4 lg:space-y-6 w-5/6 sm:w-4/5 lg:w-2/3 mx-auto sm:mx-0 sm:ml-auto">
+                        <h2 class="font-bebas text-5xl sm:text-7xl lg:text-9xl xl:text-[10rem] font-bold text-white uppercase">GOLD EDITION</h2>
                         <div class="space-y-2">
                             <div class="text-2xl lg:text-4xl font-bold text-white">
                                 <span class="block">made for those who</span>
@@ -246,8 +266,8 @@
                                 <span class="block">daily adventures experience. </span>
                             </p>
                         </div>
-                        <div>
-                            <a href="/" class="mt-2 lg:mt-5 golden-link inline-block px-2 sm:px-4 py-1 sm:py-2 rounded bg-white text-theme-golden sm:text-xl 2xl:text-3xl font-medium hover:bg-gree-500"> Discover Golden Edition </a>
+                        <div class="relative z-10">
+                            <a href="about.html#portfolioSection" class="mt-2 lg:mt-5 golden-link inline-block px-2 sm:px-4 py-1 sm:py-2 rounded bg-white text-theme-golden sm:text-xl 2xl:text-3xl font-medium hover:bg-gree-500"> Discover Golden Edition </a>
                             </div>
                     </div>
                 </div>
@@ -416,7 +436,7 @@
 
           <div class="join-the-movement-one text-4xl 2xl:text-5xl font-medium w-5/6 lg:w-4/5 mx-auto text-center mt-[25%] sm:mt-[15%] 2xl:mt-[5%]"> Buffalo drinks will boost your daily adventure by strengthening your performance, concentration, and mental wellness. </div>
 
-          <div class="theme-container">
+          <div class="theme-container hidden">
             <div class="join-the-movement-two text-4xl lg:text-7xl text-center uppercase font-bold text-theme-pacific-blue"> join the movement! </div>
             <div class="join-the-movement-three text-center text-3xl text-white font-medium">See Buffalo Drinks in action</div>
           </div>
@@ -427,7 +447,7 @@
 
           <div>
 
-            <div class="events bg-theme-black py-32">
+            <div class="events bg-theme-black py-32 hidden">
 
               <div class="carousel flex flex-wrap sm:flex-nowrap items-center space-y-5 sm:space-y-0 sm:space-x-5 theme-container">
 

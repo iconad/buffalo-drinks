@@ -32,6 +32,7 @@ const imageCoverSectionTextBlock1Child = document.querySelectorAll('.images-cove
 const imageCoverSectionTextBlock2 = document.querySelector('.images-cover-section_text_block_2')
 const imageCoverSectionTextBlock2Child = document.querySelectorAll('.images-cover-section_text_block_2_child')
 
+const upperThreeCans = document.querySelector('.upper-three-cans')
 const three1Cans = document.querySelector('.three-cans')
 const can1One = document.querySelector('.can-1')
 const can1Two = document.querySelector('.can-2')
@@ -91,7 +92,7 @@ let matchMedia = gsap.matchMedia()
     let { isMobile, isTab, isSmallLaptop, isLaptop, isDesktop } = context.conditions;
 
 
-    gsap.set(mainNavbarSwissLogoSm, { y: 30, opacity: 0, width: '0px' })
+    gsap.set(mainNavbarSwissLogoSm, { display: 'none' })
 
 
     if(!localStorage.getItem("username")) {
@@ -107,6 +108,7 @@ let matchMedia = gsap.matchMedia()
             scale: 2
         })
     }else{
+        gsap.set(loginWrapper, {opacity: 0, display: 'none'})
         gsap.set(hideOnLogin, {opacity: 0})
         gsap.to(userNameSection, 0.5, { opacity: 1 })
     }
@@ -146,9 +148,9 @@ let matchMedia = gsap.matchMedia()
         }
       });
 
-    tlNavbar.to(mainNavbarMainLogo, 1, { paddingTop: '1rem', paddingBottom: '1rem' }, 'one')
-        .to(mainNavbarSwissLogoLg, 0.5, { y: -10, opacity: 0 }, 'one')
-        .to(mainNavbarSwissLogoSm, 1, { y: '-1vmin', opacity: 1, width: 'auto' }, 'one')
+    tlNavbar.fromTo(mainNavbarMainLogo, 1, { paddingTop: '1.5rem', paddingBottom: '1.5rem' }, { paddingTop: '1rem', paddingBottom: '1rem' }, 'one')
+        .fromTo(mainNavbarSwissLogoLg, 0, { display: 'block' }, { display: 'none' }, 'one')
+        .fromTo(mainNavbarSwissLogoSm, 0, { display: 'none' }, { display: 'block' }, 'one')
 
 
 
@@ -230,23 +232,24 @@ let matchMedia = gsap.matchMedia()
         'one-out+=0.5')
 
 
-        .fromTo(classicPath, 1, { x: 3000, opacity: 0 } , { x: 0, opacity: 1 }, 'classic-in-=2.2')
-        .fromTo(classicCan, 1, { y: -3000, opacity: 0 } , { y: 0, opacity: 1 }, 'classic-in-=2.2')
+        .fromTo(classicPath, 2, { x: isMobile ? 0 :  2000, opacity: 0 } , { x: 0, opacity: 1 }, 'classic-in-=2.2')
+        .fromTo(classicCan, 2, { y:  isMobile ? -1000 : -2000, opacity: 0 } , { y: 0, opacity: 1 }, 'classic-in-=2.2')
+        .to(upperThreeCans, 0, { display: 'none' }, 'classic-in-=2.2')
 
-        .fromTo(classicPath, 1, { x: 0, opacity: 0 } , { x: 3000, opacity: 1 }, 'classic-out+=1')
-        .fromTo(classicCan, 1, { y: 0, opacity: 0 } , { y: -3000, opacity: 1 }, 'classic-out+=1')
+        .fromTo(classicPath, 2, { x: 0, opacity: 1 } , { x: isMobile ? 0 :  2000, opacity: 0 }, 'classic-out+=1')
+        .fromTo(classicCan, 2, { y: 0, opacity: 1 } , { y:  isMobile ? -1000 : -2000, opacity: 0 }, 'classic-out+=1')
 
-        .fromTo(loveEdition, 1, { x: -3000, opacity: 0 } , { x: 0, opacity: 1 }, 'love-in-=1.2')
-        .fromTo(loveEditionCan, 1, { y: -3000, opacity: 0 } , { y: 0, opacity: 1 }, 'love-in-=1.2')
+        .fromTo(loveEdition, 2, { x:  isMobile ? 0 : -2000, opacity: 0 } , { x: 0, opacity: 1 }, 'love-in-=1.6')
+        .fromTo(loveEditionCan, 2, { y:  isMobile ? -1000 : -2000, opacity: 0 } , { y: 0, opacity: 1 }, 'love-in-=1.6')
 
-        .fromTo(loveEdition, 1, { x: 0, opacity: 0 } , { x: -3000, opacity: 1 }, 'love-out+=1')
-        .fromTo(loveEditionCan, 1, { y: 0, opacity: 0 } , { y: -3000, opacity: 1 }, 'love-out+=1')
+        .fromTo(loveEdition, 2, { x: 0, opacity: 1 } , { x:  isMobile ? 0 : -2000, opacity: 0 }, 'love-out+=1')
+        .fromTo(loveEditionCan, 2, { y: 0, opacity: 1 } , { y:  isMobile ? -1000 : -2000, opacity: 0 }, 'love-out+=1')
 
-        .fromTo(goldenPath, 1, { x: -3000 } , { x: 0 }, 'golden-in-=1.2')
-        .fromTo(goldenCan, 1, { y: -3000 } , { y: 0 }, 'golden-in-=1.2')
+        .fromTo(goldenPath, 2, { x:  isMobile ? 0 : -2000, opacity: 0 } , { x: 0, opacity: 1}, 'golden-in-=1.2')
+        .fromTo(goldenCan, 2, { y:  isMobile ? -1000 : -2000, opacity: 0 } , { y: 0, opacity: 1 }, 'golden-in-=1.2')
 
-        .fromTo(goldenPath, 1, { x: 0 } , { x: -3000 }, 'golden-out+=1')
-        .fromTo(goldenCan, 1, { y: 0 } , { y: -3000 }, 'golden-out+=1')
+        .from(goldenPath, 2, { x: 0, opacity: 1 }, 'golden-out+=1')
+        .from(goldenCan, 2, { y: 0, opacity: 1 }, 'golden-out+=1')
 
 
    // Why Buffalo Timeline
@@ -274,8 +277,8 @@ let matchMedia = gsap.matchMedia()
     });
 
     tl5.fromTo( doMoreTextText, 1, { y: 500, opacity: 0 }, { y: 0, opacity: 1 }, "text-in-=1")
-        .fromTo( doMoreTextText, 1, { y: 0, opacity: 1 }, { y: -1500, opacity: 0 }, "text-out+=0.1")
-        .fromTo( doMoreTwoCans, 1, { y: 0, opacity: 1 }, { y: -1500, opacity: 0 }, isMobile ? "text-in-=1" : "do-more-in")
+        .fromTo( doMoreTextText, 3, { y: 0, opacity: 1 }, { y: -1500, opacity: 0 }, "text-out+=0.1")
+        .fromTo( doMoreTwoCans, 3, { y: 0, opacity: 1 }, { y: -1500, opacity: 0 }, isMobile ? "text-in" : "do-more-in")
         .fromTo( bigDoMore, 1, { x: 0, y: 500, opacity: 0 }, { x: 0, y: 0, opacity: 1 }, "do-more-in-=1")
         .fromTo( bigDoMore, 1, { x: 0, scale: 1 },
         {
@@ -336,26 +339,26 @@ let matchMedia = gsap.matchMedia()
       gsap.set(changeTheColorToBlack, {backgroundColor: 'white'});
 
       // Join The movement
-      const tl7 = gsap.timeline({
-        scrollTrigger: {
-          trigger: joinTheMovement,
-          start: "center center",
-          end: isMobile ? '+=500' : '+=1000',
-          scrub: 1,
-          pin: true,
-          pinSpacer: false
-        }
-      });
+    //   const tl7 = gsap.timeline({
+    //     scrollTrigger: {
+    //       trigger: joinTheMovement,
+    //       start: "center center",
+    //       end: isMobile ? '+=500' : '+=1000',
+    //       scrub: 1,
+    //       pin: true,
+    //       pinSpacer: false
+    //     }
+    //   });
 
-      tl7.fromTo(joinTheMovement, 1, { scale: 0.8, opacity: 0}, { scale: 1, opacity: 1 })
-      .fromTo(joinTheMovementOne, 1, { y: '0%', scale: 1}, { y: '-130%', scale: 0.8 }, 'one')
-      .fromTo(joinTheMovementTwo, 1, { y: '200%', opacity: 0 }, { y: '0%', opacity: 1 }, 'one')
-      .fromTo(joinTheMovementOne, 1, { y: '-140%', opacity: 1 }, { y: '-340%', opacity: 0 }, 'two+=1')
-      .fromTo(joinTheMovementTwo, 1, { y: '0%' }, { y: isMobile ? '-250%' : isTab ? '-200%' : '-140%', color: 'white' }, 'two+=1')
-      .to(changeTheColorToBlack, 1, { backgroundColor: '#000000' }, 'two+=1')
-      .fromTo(joinTheMovementThree, 1, { y: '0%', opacity: 0 }, { y: '-220%', opacity: 1 }, 'two+=1')
-      .to(events, 1, { y: '-20%', opacity: 1 }, 'two')
-      .to(bePartFamily, 1, { y: '-20%', opacity: 1 }, 'two')
+    //   tl7.fromTo(joinTheMovement, 1, { scale: 0.8, opacity: 0}, { scale: 1, opacity: 1 })
+    //   .fromTo(joinTheMovementOne, 1, { y: '0%', scale: 1}, { y: '-130%', scale: 0.8 }, 'one')
+    //   .fromTo(joinTheMovementTwo, 1, { y: '200%', opacity: 0 }, { y: '0%', opacity: 1 }, 'one')
+    //   .fromTo(joinTheMovementOne, 1, { y: '-140%', opacity: 1 }, { y: '-340%', opacity: 0 }, 'two+=1')
+    //   .fromTo(joinTheMovementTwo, 1, { y: '0%' }, { y: isMobile ? '-250%' : isTab ? '-200%' : '-140%', color: 'white' }, 'two+=1')
+    //   .to(changeTheColorToBlack, 1, { backgroundColor: '#000000' }, 'two+=1')
+    //   .fromTo(joinTheMovementThree, 1, { y: '0%', opacity: 0 }, { y: '-220%', opacity: 1 }, 'two+=1')
+    //   .to(events, 1, { y: '-20%', opacity: 1 }, 'two')
+    //   .to(bePartFamily, 1, { y: '-20%', opacity: 1 }, 'two')
 
 
 

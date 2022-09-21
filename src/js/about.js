@@ -15,6 +15,7 @@ const popupImage = document.querySelector('#popupImage')
 const closePopup = document.querySelector('#closePopup')
 const openPopup = document.querySelectorAll('.open-popup')
 
+
 const popupTL = gsap.timeline();
 
 gsap.set(aboutPopupWrapper, {opacity: 0, zIndex: -1})

@@ -30,7 +30,7 @@ for (var i=0; i<MegaLi.length; i++) {
 function openMegaMenu() {
 
   mmtl.play()
-  mmtl.fromTo(MegaMenu, 0.4, {opacity: 0, zIndex: -50}, {opacity: 1, zIndex: 50}, 'one')
+  mmtl.fromTo(MegaMenu, 0.4, {opacity: 0, zIndex: -50}, {opacity: 1, zIndex: 150}, 'one')
   .fromTo(MegaLi, 0.2, { y: -50, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.1 }, 'one')
 
 }

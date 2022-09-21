@@ -55,7 +55,7 @@ html,body {
 
 .classic-can:after {
     content: "";
-    @apply absolute w-[200%] h-[200%] bg-black top-0 right-[50%] -z-[1]
+    @apply hidden sm:block absolute w-[200%] h-[200%] bg-black top-0 right-[50%] -z-[1]
     /* border-bottom: 100vh solid #009CBC;
     border-left: 30vw solid transparent; */
 }
@@ -63,7 +63,7 @@ html,body {
 
 .love-edition-can:after {
     content: "";
-    @apply absolute w-[200%] h-[200%] bg-black top-0 left-[50%] -z-[1]
+    @apply hidden sm:block absolute w-[200%] h-[200%] bg-black top-0 left-[50%] -z-[1]
     /* border-bottom: 100vh solid #009CBC;
     border-left: 30vw solid transparent; */
 }
