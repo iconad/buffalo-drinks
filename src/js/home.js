@@ -132,6 +132,7 @@ let matchMedia = gsap.matchMedia()
             const tl0 = gsap.timeline();
             tl0.to(hideOnLogin, 1, { opacity: 0 }, 'one')
             .to(mainNavbar, 1, { backgroundColor: "#333333" }, 'one')
+            .to(loginWrapper, 1, { zIndex: '-10' }, 'one')
             .to(loginWrapperBlack, 1, { backgroundColor: "rgba(51, 51, 51, 0)", scale: 10 }, 'one')
             .fromTo(mainNavbarMainLogo, 0.5,
             { zIndex: 111, x: '-45px', y: isMobile ? '35vh' : isTab ? '35vh' : isDesktop ? '40vh' : '35vh', scale: 2  },
@@ -293,18 +294,19 @@ let matchMedia = gsap.matchMedia()
         .to(".do-more-list",
         {
             duration: isMobile ? 2 : 3,
-            yPercent: isMobile ? -60 : isTab ? -125 : isSmallLaptop ? -215 : isLaptop ? -215 : -168,
+            yPercent: isMobile ? -60 : isTab ? -125 : isSmallLaptop ? -215 : isLaptop ? -150 : -168,
             ease: 'none'
         })
         .to(".do-more-list li", {
 
         keyframes: {
-            color: ['white', '#6b7280'],
+            // color: ['white', '#6b7280'],
+            color: ['white', 'rgb(66, 68, 72)'],
         },
 
-        duration: isMobile ? 0.2 : isTab ? 0.3 : isSmallLaptop ? 0.3 : isLaptop ? 0.3 : 0.3,
+        duration: isMobile ? 0.2 : isTab ? 0.3 : isSmallLaptop ? 0.3 : isLaptop ? 0.5 : 0.3,
         stagger: {
-            amount: isMobile ? 1.7 : isTab ? 3 : isSmallLaptop ? 3.1 : isLaptop ? 3.1 : 3
+            amount: isMobile ? 1.7 : isTab ? 3 : isSmallLaptop ? 3.1 : isLaptop ? 3 : 3
         }
 
         }, '<');
@@ -340,30 +342,6 @@ let matchMedia = gsap.matchMedia()
           }, 'three-=2')
 
       gsap.set(changeTheColorToBlack, {backgroundColor: 'white'});
-
-      // Join The movement
-    //   const tl7 = gsap.timeline({
-    //     scrollTrigger: {
-    //       trigger: joinTheMovement,
-    //       start: "center center",
-    //       end: isMobile ? '+=500' : '+=1000',
-    //       scrub: 1,
-    //       pin: true,
-    //       pinSpacer: false
-    //     }
-    //   });
-
-    //   tl7.fromTo(joinTheMovement, 1, { scale: 0.8, opacity: 0}, { scale: 1, opacity: 1 })
-    //   .fromTo(joinTheMovementOne, 1, { y: '0%', scale: 1}, { y: '-130%', scale: 0.8 }, 'one')
-    //   .fromTo(joinTheMovementTwo, 1, { y: '200%', opacity: 0 }, { y: '0%', opacity: 1 }, 'one')
-    //   .fromTo(joinTheMovementOne, 1, { y: '-140%', opacity: 1 }, { y: '-340%', opacity: 0 }, 'two+=1')
-    //   .fromTo(joinTheMovementTwo, 1, { y: '0%' }, { y: isMobile ? '-250%' : isTab ? '-200%' : '-140%', color: 'white' }, 'two+=1')
-    //   .to(changeTheColorToBlack, 1, { backgroundColor: '#000000' }, 'two+=1')
-    //   .fromTo(joinTheMovementThree, 1, { y: '0%', opacity: 0 }, { y: '-220%', opacity: 1 }, 'two+=1')
-    //   .to(events, 1, { y: '-20%', opacity: 1 }, 'two')
-    //   .to(bePartFamily, 1, { y: '-20%', opacity: 1 }, 'two')
-
-
 
 
 

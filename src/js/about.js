@@ -56,11 +56,14 @@ openPopup.forEach(element => {
 
 function openProductPopupFromURL (e) {
 
+
     popupHeaderText.innerHTML = e.dataset.title
     popupAbout.innerHTML = e.dataset.about
     popupIngredients.innerHTML = e.dataset.ingredients
     popupImage.src = e.dataset.image
     popupHeader.style["background-color"] = '#'+e.dataset.color
+
+    console.log(e.dataset)
 
     const popupTL = gsap.timeline();
     popupTL.play()
@@ -80,7 +83,7 @@ closePopup.addEventListener('click', function () {
      {scale: 1, opacity: 1, ease: "back.out(1.7)"},
      {scale: 0, opacity: 1}, 'one')
 
-     window.location.href = location.protocol + '//' + location.host + location.pathname + location.hash
+    //  window.location.href = location.protocol + '//' + window.location.host + window.location.pathname + window.location.hash
 
 })
 

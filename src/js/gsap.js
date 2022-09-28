@@ -110,7 +110,6 @@ const changeTheColorToBlack = document.querySelector('.change-the-color-to-black
       gsap.to(hideOnLogin, 0, { opacity: 0 }, 'one')
       gsap.to(mainNavbar, 0, { backgroundColor: "rgba(51, 51, 51, 1)", height: 100 }, 'one')
       gsap.to(loginWrapperBlack, 0, { backgroundColor: "rgba(51, 51, 51, 0)", scale: 10 }, 'one')
-      // gsap.to('body', 0, {className: '-=overflow-y-hidden'}, 'one')
       gsap.to(loginLogo, 0,
         {
           y: isMobile ? '-385%' : isTab ? '-520%' : isSmallLaptop ? '-350%' : isLaptop ? '-295%' : '-780%' , scale: isMobile ? 0.5 : 0.6,
