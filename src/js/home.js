@@ -306,7 +306,7 @@ let matchMedia = gsap.matchMedia()
 
         duration: isMobile ? 0.2 : isTab ? 0.3 : isSmallLaptop ? 0.3 : isLaptop ? 0.5 : 0.3,
         stagger: {
-            amount: isMobile ? 1.7 : isTab ? 3 : isSmallLaptop ? 3.1 : isLaptop ? 3 : 3
+            amount: isMobile ? 1.7 : isTab ? 3 : isSmallLaptop ? 3.1 : isLaptop ? 2.4 : 3
         }
 
         }, '<');
