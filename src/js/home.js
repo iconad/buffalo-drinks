@@ -320,7 +320,7 @@ let matchMedia = gsap.matchMedia()
         .fromTo( bigDoMore, 1, { x: 0, scale: 1 },
         {
             x: isMobile ? -100 : isTab ? -200 : -290,
-            scale: isMobile ? 0.25 : isTab ? 0.25 : 0.35
+            scale: isMobile ? 0.40 : isTab ? 0.25 : 0.35
         }, "do-more-in")
         .fromTo( doMoreList, 1, { y: 500, x: 200, opacity: 0 }, { y: 300, x: 200, opacity: 1 }, "do-more-list-=1")
 
