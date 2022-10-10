@@ -66,7 +66,6 @@ const doMoreTwoCans = document.querySelector('.do-more-two-cans')
 const doMoreTextText = document.querySelectorAll('.do-more-text-text')
 const bigDoMore = document.querySelector('.big-do-more')
 const doMoreList = document.querySelector('.do-more-list')
-const lastDoMoreList = document.querySelector('.last-do-more-list')
 
 const moreByBuffalo = document.querySelector('.more-by-buffalo')
 const moreByBuffaloTitle = document.querySelector('.more-by-buffalo-title')
@@ -314,7 +313,7 @@ let matchMedia = gsap.matchMedia()
     });
 
     tl5.fromTo( doMoreTextText, 10, { y: 500, opacity: 0 }, { y: 0, opacity: 1 }, "text-in-=1")
-        .fromTo( doMoreTextText, 10, { y: 0, opacity: 1 }, { y: -1500, opacity: 0 }, "text-out+=1")
+        .fromTo( doMoreTextText, 10, { y: 0, opacity: 1 }, { y: -1500, opacity: 0 }, "text-out+=0.1")
         .fromTo( doMoreTwoCans, 3, { y: 0, opacity: 1 }, { y: -1500, opacity: 0 }, isMobile ? "text-in" : "do-more-in")
         .fromTo( bigDoMore, 1, { x: 0, y: 500, opacity: 0 }, { x: 0, y: 0, opacity: 1 }, "do-more-in-=1")
         .fromTo( bigDoMore, 1, { x: 0, scale: 1 },
