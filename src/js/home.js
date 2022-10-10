@@ -7,7 +7,8 @@ gsap.registerPlugin(ScrollTrigger);
 window.onload = function() {
 // Navbar
 const userNameSection = document.querySelector('.username-section')
-const bodytag = document.querySelector('.bodytag')
+const bodyTag = document.querySelector('.bodytag')
+const htmlTag = document.querySelector('html')
 const userName = document.querySelector('#userName')
 const mainNavbar = document.querySelector('.main-navbar')
 const mainNavbarSwissLogo = document.querySelector('.main-navbar_swis_logo')
@@ -82,7 +83,6 @@ const joinTheMovementInfo = document.querySelector('.join-the-movement-info')
 const changeTheColorToBlack = document.querySelector('.change-the-color-to-black')
 
 
-
 let matchMedia = gsap.matchMedia()
 
   matchMedia.add({
@@ -102,6 +102,10 @@ let matchMedia = gsap.matchMedia()
     if(!localStorage.getItem("username")) {
 
     gsap.set(userNameSection, {opacity: 0})
+
+    gsap.set(htmlTag, {overflowX: 'hidden'})
+    gsap.set(htmlTag, {overflowY: 'hidden'})
+
     gsap.set(mainNavbar, {zIndex: 111, backgroundColor: 'transparent'})
     gsap.set(loginWrapperBlack, {backgroundColor: "rgba(0, 0, 0, 0.4)" , opacity: 1 })
     gsap.set(mainNavbarMainLogo,
@@ -112,6 +116,8 @@ let matchMedia = gsap.matchMedia()
         })
     }else{
 
+
+
         const uname = document.querySelector('#userName')
         uname.innerHTML =  localStorage.getItem("username");
 
@@ -121,6 +127,10 @@ let matchMedia = gsap.matchMedia()
     }
 
     formSubmit.addEventListener('submit', function (e) {
+      onEnterName()
+    })
+
+    skipButton.addEventListener('click', function (e) {
       onEnterName()
     })
 
@@ -140,6 +150,8 @@ let matchMedia = gsap.matchMedia()
       localStorage.setItem("username", loginInputValue);
       userName.innerHTML =  localStorage.getItem("username");
       gsap.to(userNameSection, 0.5, { opacity: 1 }).delay(0.8)
+
+      gsap.set(htmlTag, {overflowY: 'auto'})
 
       const tl0 = gsap.timeline();
       tl0.to(hideOnLogin, 1, { opacity: 0 }, 'one')
@@ -289,8 +301,8 @@ let matchMedia = gsap.matchMedia()
         }
     });
 
-    tl5.fromTo( doMoreTextText, 1, { y: 500, opacity: 0 }, { y: 0, opacity: 1 }, "text-in-=1")
-        .fromTo( doMoreTextText, 3, { y: 0, opacity: 1 }, { y: -1500, opacity: 0 }, "text-out+=1")
+    tl5.fromTo( doMoreTextText, 10, { y: 500, opacity: 0 }, { y: 0, opacity: 1 }, "text-in-=1")
+        .fromTo( doMoreTextText, 10, { y: 0, opacity: 1 }, { y: -1500, opacity: 0 }, "text-out+=1")
         .fromTo( doMoreTwoCans, 3, { y: 0, opacity: 1 }, { y: -1500, opacity: 0 }, isMobile ? "text-in" : "do-more-in")
         .fromTo( bigDoMore, 1, { x: 0, y: 500, opacity: 0 }, { x: 0, y: 0, opacity: 1 }, "do-more-in-=1")
         .fromTo( bigDoMore, 1, { x: 0, scale: 1 },
