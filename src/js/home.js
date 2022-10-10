@@ -130,6 +130,7 @@ let matchMedia = gsap.matchMedia()
 
         const uname = document.querySelector('#userName')
         uname.innerHTML =  localStorage.getItem("username");
+        gsap.set(onlyForIOS, {display: 'none'})
 
         gsap.set(loginWrapper, {opacity: 0, display: 'none'})
         gsap.set(hideOnLogin, {opacity: 0})
@@ -162,7 +163,7 @@ let matchMedia = gsap.matchMedia()
       gsap.to(userNameSection, 0.5, { opacity: 1 }).delay(0.8)
 
       gsap.set(htmlTag, {overflowY: 'auto', height: 'auto'})
-      gsap.to(onlyForIOS, 0.5, { display: 'none' }).delay(0.8)
+      gsap.set(onlyForIOS, {display: 'none'})
 
       const tl0 = gsap.timeline();
       tl0.to(hideOnLogin, 1, { opacity: 0 }, 'one')
