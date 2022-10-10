@@ -162,7 +162,7 @@ let matchMedia = gsap.matchMedia()
       gsap.to(userNameSection, 0.5, { opacity: 1 }).delay(0.8)
 
       gsap.set(htmlTag, {overflowY: 'auto', height: 'auto'})
-      gsap.set(onlyForIOS, {display: 'none'})
+      gsap.to(onlyForIOS, 0.5, {display: 'none'}).delay(0.8)
 
       const tl0 = gsap.timeline();
       tl0.to(hideOnLogin, 1, { opacity: 0 }, 'one')
