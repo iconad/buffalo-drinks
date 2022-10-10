@@ -103,8 +103,7 @@ let matchMedia = gsap.matchMedia()
 
     gsap.set(userNameSection, {opacity: 0})
 
-    gsap.set(htmlTag, {overflowX: 'hidden'})
-    gsap.set(htmlTag, {overflowY: 'hidden'})
+    gsap.set(htmlTag, {overflowY: 'hidden', overflowX: 'hidden', height: '100%'})
 
     gsap.set(mainNavbar, {zIndex: 111, backgroundColor: 'transparent'})
     gsap.set(loginWrapperBlack, {backgroundColor: "rgba(0, 0, 0, 0.4)" , opacity: 1 })
@@ -151,7 +150,7 @@ let matchMedia = gsap.matchMedia()
       userName.innerHTML =  localStorage.getItem("username");
       gsap.to(userNameSection, 0.5, { opacity: 1 }).delay(0.8)
 
-      gsap.set(htmlTag, {overflowY: 'auto'})
+      gsap.set(htmlTag, {overflowY: 'auto', height: 'auto'})
 
       const tl0 = gsap.timeline();
       tl0.to(hideOnLogin, 1, { opacity: 0 }, 'one')
@@ -308,7 +307,7 @@ let matchMedia = gsap.matchMedia()
         .fromTo( bigDoMore, 1, { x: 0, scale: 1 },
         {
             x: isMobile ? -100 : isTab ? -200 : -290,
-            scale: isMobile ? 0.5 : isTab ? 0.25 : 0.35
+            scale: isMobile ? 0.25 : isTab ? 0.25 : 0.35
         }, "do-more-in")
         .fromTo( doMoreList, 1, { y: 500, x: 200, opacity: 0 }, { y: 300, x: 200, opacity: 1 }, "do-more-list-=1")
 
