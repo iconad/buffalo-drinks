@@ -43,7 +43,7 @@ openPopup.forEach(element => {
 
     const popupTL = gsap.timeline();
     popupTL.play()
-    popupTL.fromTo(aboutPopupWrapper, 0.3, {opacity: 0, zIndex: -1}, {opacity: 1, zIndex: 1}, 'one')
+    popupTL.fromTo(aboutPopupWrapper, 0.3, {opacity: 0, zIndex: -1}, {opacity: 1, zIndex: 20}, 'one')
     .fromTo(aboutPopup, 0.3,
      {scale: 0, opacity: 1},
      {scale: 1, opacity: 1, ease: "back.out(1.7)" }, 'one')
@@ -67,7 +67,7 @@ function openProductPopupFromURL (e) {
 
     const popupTL = gsap.timeline();
     popupTL.play()
-    popupTL.fromTo(aboutPopupWrapper, 0.3, {opacity: 0, zIndex: -1}, {opacity: 1, zIndex: 1}, 'one')
+    popupTL.fromTo(aboutPopupWrapper, 0.3, {opacity: 0, zIndex: -1}, {opacity: 1, zIndex: 20}, 'one')
     .fromTo(aboutPopup, 0.3,
      {scale: 0, opacity: 1},
      {scale: 1, opacity: 1, ease: "back.out(1.7)" }, 'one')

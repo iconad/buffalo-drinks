@@ -40,3 +40,19 @@ function closeMegaMenu() {
 }
 
 
+
+
+document.onreadystatechange = function() {
+  if (document.readyState !== "complete") {
+      document.querySelector("body").style.visibility = "hidden";
+      document.querySelector(".spinner-wrapper").style.visibility = "visible";
+      document.querySelector(".spinner-wrapper").style.zIndex = 100;
+// /      document.querySelector(".hidden-element").style.display = 'block';
+
+  } else {
+      document.querySelector(".spinner-wrapper").style.display = "none";
+      document.querySelector(".spinner-wrapper").style.zIndex = -100;
+      document.querySelector("body").style.visibility = "visible";
+      // document.querySelector(".hidden-element").style.display = 'none';
+  }
+};

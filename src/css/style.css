@@ -16,7 +16,7 @@ html,body {
 }
 
 .block-span{
-    @apply inline lg:block;
+    @apply inline-block lg:block;
 }
 
 .prevent-pointer {
@@ -66,4 +66,38 @@ html,body {
     @apply hidden sm:block absolute w-[200%] h-[200%] bg-black top-0 left-[50%] -z-[1]
     /* border-bottom: 100vh solid #009CBC;
     border-left: 30vw solid transparent; */
+}
+
+
+
+#spinner   {
+    animation: spin 1s linear infinite;
+    color: red;
+}
+
+@keyframes spin {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.inline{
+display: flex;
+}
+.center{
+flex:left;
+}
+.spinner i{
+margin-top: 10px;
+margin-left: 50px;
+
+
 }

@@ -8,10 +8,15 @@
     <title>Buffalo</title>
   </head>
   <body class="bodytag overflow-x-hidden">
+
+    <div class="spinner-wrapper bg-theme-black bg-red-300 fixed inset-0 z-[100] flex items-center justify-center">
+      <div class="spinner" id="spinner">
+        <img src="/images/logo-sm.svg" alt="logo" class="h-8 mx-auto">
+      </div>
+    </div>
+
+
     <div id="app" class="site-wrapper bg-black overflow-x-hidden">
-
-
-
 
       <div class="main-navbar w-full bg-theme-dark-gray fixed left-0 top-0 z-[60]">
         <div class="theme-container text-white">
@@ -24,7 +29,7 @@
               <!-- swis logo -->
 
               <a href="index.html" class="w-full main-navbar_main_logo flex items-center py-6 sm:py-2">
-                <img src="/images/logo-sm.svg" alt="logo" class="h-8 mx-auto">
+                <img src="/images/logo-sm.svg" alt="logo" class="hidden-element h-8 mx-auto">
               </a>
               <!-- main logo -->
 
@@ -66,12 +71,16 @@
               <span class="block-span font-light">Type your name here</span>
             </div>
 
-            <form action="#">
+            <form action="#" id="formSubmit">
               <input type="text"
                 id="loginInput"
                 class="w-96 px-5 py-3 bg-theme-dark-gray rounded-xl text-white focus:outline-none active:outline-none text-2xl font-light hide-on-login"
-                autocomplete="off"
+                autocomplete="off" required
                 >
+                <div class="flex items-center justify-center mt-5 space-x-5">
+                  <input type="submit" value="Enter" class="px-10 py-2 bg-theme-dark-gray text-white rounded-lg text-sm cursor-pointer" id="submitButton">
+                  <input type="button" value="Skip" class="px-5 py-1 border-2 border-theme-dark-gray text-white rounded-lg text-sm cursor-pointer hover:bg-theme-dark-gray" id="skipButton">
+                </div>
             </form>
 
           </div>
@@ -113,10 +122,10 @@
             <div class="theme-container text-white h-full lg:h-2/3 3xl:h-full flex items-center justify-center images-cover-section_text_block_1 ">
               <div class="text-center w-full space-y-10 relative z-10">
                 <h2 class="text-4xl sm:text-7xl font-black images-cover-section_text_block_1_child">Hi, <span id="userName" class="capitalize"></span> DO MORE with Buffalo Drinks!</h2>
-                <p class="text-lg sm:text-xl lg:text-2xl w-full space-y-2 images-cover-section_text_block_1_child">
+                <p class="text-lg sm:text-xl text-center lg:text-2xl w-full space-y-2 images-cover-section_text_block_1_child">
                   <span class="block-span font-extralight">Join our global movement and live life to the fullest</span>
-                  <span class="block-span font-extralight"> by rising above the ordinary! Every sip empowers</span>
-                  <span class="block-span font-extralight"> you to seek more thrills and more joy </span>
+                  <span class="block-span font-extralight">by rising above the ordinary! Every sip empowers</span>
+                  <span class="block-span font-extralight">you to seek more thrills and more joy </span>
                   <span class="block-span font-extralight">on every adventure.</span>
                 </p>
               </div>
@@ -177,11 +186,9 @@
 
             <div class="three-1-cans-text absolute w-full top-[30%] left-0 text-white">
                 <div class="text-center w-full space-y-5">
-                <h2 class="text-3xl sm:text-5xl w-5/6 lg:w-full mx-auto font-black">GET READY TO DO MORE!</h2>
-                <p class="text-xl sm:text-2xl lg:text-4xl w-5/6 lg:w-full mx-auto space-y-2">
-                    <span class="block-span font-extralight">with 3 different editions made for the</span>
-                    <span class="block-span font-extralight">adventurous, the seekers, the doers,</span>
-                    <span class="block-span font-extralight text-theme-cyan">& for everyone, literally!</span>
+                <p class="text-xl sm:text-2xl lg:text-4xl w-5/6 lg:w-full mx-auto space-y-2 mt-48 md:mt-0">
+                    <span class="block-span font-extralight">IN THE PALM OF YOUR HAND IS THE ABILITY TO DO MORE!</span>
+                    <span class="block-span font-extralight">Which of the three editions calls out to you?</span>
                 </p>
                 </div>
             </div>
@@ -201,10 +208,10 @@
                         <h2 class="font-bebas text-5xl sm:text-7xl lg:text-9xl xl:text-[10rem] font-bold text-white uppercase blue-title">CLASSIC</h2>
                         <div class="space-y-2">
                             <div class="text-2xl lg:text-4xl font-bold text-white">
-                                <span class="inline sm:block">made to inspire and</span>
-                                <span class="inline sm:block">energize you</span>
+                                <span class="inline sm:block">Made to inspire</span>
+                                <span class="inline sm:block">and energize.</span>
                             </div>
-                            <p class="text-sm lg:text-xl 2xl:text-2xl font-medium text-white">to own your moment & live to the most</p>
+                            <p class="text-sm lg:text-xl 2xl:text-2xl font-medium text-white hidden">to own your moment & live to the most</p>
                         </div>
                         <div>
                             <a href="about.html?p=classicEdition#portfolioSection" class="mt-2 lg:mt-5 classic-link inline-block px-2 sm:px-4 py-1 sm:py-2 rounded bg-white text-theme-dark-sky sm:text-xl 2xl:text-3xl font-medium hover:bg-gree-500"> Discover Classic </a>
@@ -225,10 +232,10 @@
                         </h2>
                         <div class="space-y-2">
                             <div class="text-2xl lg:text-4xl font-bold text-white">
-                                <span class="block">Made for the</span>
-                                <span class="block">passionate ones</span>
+                                <span class="block">Made For Those</span>
+                                <span class="block">Who Are Passionate.</span>
                             </div>
-                            <p class="text-sm lg:text-xl 2xl:text-2xl font-medium text-white">
+                            <p class="text-sm lg:text-xl 2xl:text-2xl font-medium text-white hidden">
                                 <span class="inline sm:block">those who appreciate, connection,</span>
                                 <span class="inline sm:block">and intimacy and want to take </span>
                                 <span class="inline sm:block">their relationaship to the next level</span>
@@ -260,10 +267,10 @@
                         <h2 class="font-bebas text-5xl sm:text-7xl lg:text-9xl xl:text-[10rem] font-bold text-white uppercase">GOLD EDITION</h2>
                         <div class="space-y-2">
                             <div class="text-2xl lg:text-4xl font-bold text-white">
-                                <span class="block">made for those who</span>
-                                <span class="block">want more!</span>
+                                <span class="block">Made for those</span>
+                                <span class="block">who desire more.</span>
                             </div>
-                            <p class="text-sm lg:text-xl 2xl:text-2xl font-medium text-white">
+                            <p class="text-sm lg:text-xl 2xl:text-2xl font-medium text-white hidden">
                                 <span class="block">adding something different to your</span>
                                 <span class="block">daily adventures experience. </span>
                             </p>
@@ -294,8 +301,8 @@
             <div class="why-buffalo-title text-center space-y-5">
               <h3 class="text-6xl font-bold">Why Buffalo Drinks?</h3>
               <p class="text-xl">
-                <span class="block-span"> We are on a plan to change people's lifestyle to a much healthier one,</span>
-                <span>without compromising on the taste, quality or experience.</span>
+                <span class="block-span"> We are on a mission to offer a healthy and sustainable choice in energy drinks,</span>
+                <span>with no compromise on taste, quality or most important of all – experience.</span>
               </p>
             </div>
 
@@ -324,24 +331,24 @@
               <div class="do-more-text-text flex flex-wrap sm:flex-nowrap space-y-10 sm:space-y-0 w-full items-center justify-between">
                 <div class="w-full sm:w-1/4 space-y-3">
                   <h4 class="text-2xl font-medium 2xl:text-3xl">LOW CALORIES</h4>
-                  <p class="text-base text-gray-200 2xl:text-xl">With Buffalo drinks, there there's no better way to get the kick you need. It comes with refreshing flavors for those who want to wean off their high-calorie beverages and for those who want to take a new adventure in changing their lifestyles.</p>
+                  <p class="text-base text-gray-200 2xl:text-xl">Buffalo Energy is not only refreshing in taste, it boosts mood and abilities without excessive calories.</p>
                 </div>
 
                 <div class="w-full sm:w-1/4 space-y-3">
                   <h4 class="text-2xl font-medium 2xl:text-3xl">VEGAN PRODUCT</h4>
-                  <p class="text-base text-gray-200 2xl:text-xl">We are on a plan to change people's lifestyle to a much healthier one, without compromising on the taste, quality, or experience, at Buffalo, we believe there's a better way to get an energy boost and do more by shifting from animal to plant-based ingredients.</p>
+                  <p class="text-base text-gray-200 2xl:text-xl">We are different in many ways, and our commitment to only use plant-based ingredients ensures that Buffalo Energy not only stands out from the others, it caters to almost every individual.</p>
                 </div>
               </div>
 
               <div class="do-more-text-text last-do-more-text-text flex flex-wrap sm:flex-nowrap space-y-10 sm:space-y-0 w-full items-center justify-between">
                 <div class="w-full sm:w-1/4 space-y-3">
                   <h4 class="text-2xl font-medium 2xl:text-3xl">TAURINE FREE</h4>
-                  <p class="text-base text-gray-200 2xl:text-xl">Our ingredients are from nature with the same classic energy drink taste you have used to, we have listened to the people and those who strive for a better alternative, so we developed a 100% vegan product.</p>
+                  <p class="text-base text-gray-200 2xl:text-xl">Being a vegan product, there is absolutely no taurine in our drinks. Enjoy every sip of Buffalo Energy in the comfort of knowing there’s no animal by-products being consumed.</p>
                 </div>
 
                 <div class="w-full sm:w-1/4 space-y-3 ">
                   <h4 class="text-2xl font-medium 2xl:text-3xl">OWN YOUR MOMENT</h4>
-                  <p class="text-base text-gray-200 2xl:text-xl">We are here for the You, we want to enable your daily adventures and inspire a global movement of doing more, never miss out and exploration.</p>
+                  <p class="text-base text-gray-200 2xl:text-xl">Let no moment pass by without knowing you have made the most of it with Buffalo Energy.</p>
                 </div>
               </div>
             </div>
@@ -432,7 +439,7 @@
 
         <div id="joinTheMovement" class="join-the-movement h-screen flex flex-col items-center justify-center">
 
-          <div class="join-the-movement-one text-4xl 2xl:text-5xl font-medium w-5/6 lg:w-4/5 mx-auto text-center mt-[25%] sm:mt-[15%] 2xl:mt-[5%]"> Buffalo drinks will boost your daily adventure by strengthening your performance, concentration, and mental wellness. </div>
+          <div class="join-the-movement-one text-4xl 2xl:text-5xl font-medium w-5/6 lg:w-4/5 mx-auto text-center mt-[25%] sm:mt-[15%] 2xl:mt-[5%]"> Buffalo drinks will boost your daily adventures by strengthening your performance, concentration, and mental wellness. </div>
 
           <div class="theme-container hidden">
             <div class="join-the-movement-two text-4xl lg:text-7xl text-center uppercase font-bold text-theme-pacific-blue"> join the movement! </div>

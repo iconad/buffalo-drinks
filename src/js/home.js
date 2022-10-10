@@ -4,6 +4,7 @@ const ST = ScrollTrigger;
 gsap.registerPlugin(ScrollTrigger);
 
 
+window.onload = function() {
 // Navbar
 const userNameSection = document.querySelector('.username-section')
 const bodytag = document.querySelector('.bodytag')
@@ -22,6 +23,9 @@ const loginWrapperBlack = document.querySelector('.login-wrapper-black')
 const loginLogo = document.querySelector('.login-logo')
 const hideOnLogin = document.querySelectorAll('.hide-on-login')
 const loginInput = document.querySelector('#loginInput')
+const submitButton = document.querySelector('#submitButton')
+const skipButton = document.querySelector('#skipButton')
+const formSubmit = document.querySelector('#formSubmit')
 // Cover
 const imageCoverSection = document.querySelector('.images-cover-section')
 const imageCoverSectionImages = document.querySelector('.images-cover-section_images')
@@ -116,31 +120,36 @@ let matchMedia = gsap.matchMedia()
         gsap.to(userNameSection, 0.5, { opacity: 1 })
     }
 
+    formSubmit.addEventListener('submit', function (e) {
+      onEnterName()
+    })
+
 
 
     loginInput.addEventListener('keypress', function(e) {
 
-
         if(e.keyCode === 13){
-
             e.preventDefault();
-            let loginInputValue = loginInput.value
-            localStorage.setItem("username", loginInputValue);
-            userName.innerHTML =  localStorage.getItem("username");
-            gsap.to(userNameSection, 0.5, { opacity: 1 }).delay(0.8)
-
-            const tl0 = gsap.timeline();
-            tl0.to(hideOnLogin, 1, { opacity: 0 }, 'one')
-            .to(mainNavbar, 1, { backgroundColor: "#333333" }, 'one')
-            .to(loginWrapper, 1, { zIndex: '-10' }, 'one')
-            .to(loginWrapperBlack, 1, { backgroundColor: "rgba(51, 51, 51, 0)", scale: 10 }, 'one')
-            .fromTo(mainNavbarMainLogo, 0.5,
-            { zIndex: 111, x: '-45px', y: isMobile ? '35vh' : isTab ? '35vh' : isDesktop ? '40vh' : '35vh', scale: 2  },
-            { zIndex: 1, x: '0%', y: '0%', scale: 1}, 'one')
-
+            onEnterName()
         }
 
     })
+
+    function onEnterName () {
+      let loginInputValue = loginInput.value
+      localStorage.setItem("username", loginInputValue);
+      userName.innerHTML =  localStorage.getItem("username");
+      gsap.to(userNameSection, 0.5, { opacity: 1 }).delay(0.8)
+
+      const tl0 = gsap.timeline();
+      tl0.to(hideOnLogin, 1, { opacity: 0 }, 'one')
+      .to(mainNavbar, 1, { backgroundColor: "#333333" }, 'one')
+      .to(loginWrapper, 1, { zIndex: '-10' }, 'one')
+      .to(loginWrapperBlack, 1, { backgroundColor: "rgba(51, 51, 51, 0)", scale: 10 }, 'one')
+      .fromTo(mainNavbarMainLogo, 0.5,
+      { zIndex: 111, x: '-45px', y: isMobile ? '35vh' : isTab ? '35vh' : isDesktop ? '40vh' : '35vh', scale: 2  },
+      { zIndex: 1, x: '0%', y: '0%', scale: 1}, 'one')
+    }
 
 
     // Animated Navbar
@@ -281,7 +290,7 @@ let matchMedia = gsap.matchMedia()
     });
 
     tl5.fromTo( doMoreTextText, 1, { y: 500, opacity: 0 }, { y: 0, opacity: 1 }, "text-in-=1")
-        .fromTo( doMoreTextText, 3, { y: 0, opacity: 1 }, { y: -1500, opacity: 0 }, "text-out+=0.1")
+        .fromTo( doMoreTextText, 3, { y: 0, opacity: 1 }, { y: -1500, opacity: 0 }, "text-out+=1")
         .fromTo( doMoreTwoCans, 3, { y: 0, opacity: 1 }, { y: -1500, opacity: 0 }, isMobile ? "text-in" : "do-more-in")
         .fromTo( bigDoMore, 1, { x: 0, y: 500, opacity: 0 }, { x: 0, y: 0, opacity: 1 }, "do-more-in-=1")
         .fromTo( bigDoMore, 1, { x: 0, scale: 1 },
@@ -294,7 +303,7 @@ let matchMedia = gsap.matchMedia()
         .to(".do-more-list",
         {
             duration: isMobile ? 2 : 3,
-            yPercent: isMobile ? -60 : isTab ? -125 : isSmallLaptop ? -215 : isLaptop ? -150 : -168,
+            yPercent: isMobile ? -45 : isTab ? -125 : isSmallLaptop ? -215 : isLaptop ? -150 : -120,
             ease: 'none'
         })
         .to(".do-more-list li", {
@@ -306,7 +315,7 @@ let matchMedia = gsap.matchMedia()
 
         duration: isMobile ? 0.2 : isTab ? 0.3 : isSmallLaptop ? 0.3 : isLaptop ? 0.5 : 0.3,
         stagger: {
-            amount: isMobile ? 1.7 : isTab ? 3 : isSmallLaptop ? 3.1 : isLaptop ? 2.4 : 3
+            amount: isMobile ? 1.7 : isTab ? 3 : isSmallLaptop ? 3.1 : isLaptop ? 3.1 : 3
         }
 
         }, '<');
@@ -353,3 +362,4 @@ let matchMedia = gsap.matchMedia()
 
 
 
+}
