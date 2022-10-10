@@ -7,7 +7,7 @@ gsap.registerPlugin(ScrollTrigger);
 window.onload = function() {
 // Navbar
 const userNameSection = document.querySelector('.username-section')
-const bodyTag = document.querySelector('.bodytag')
+const bodyTag = document.getElementById('bodytag')
 const htmlTag = document.querySelector('html')
 const userName = document.querySelector('#userName')
 const mainNavbar = document.querySelector('.main-navbar')
@@ -27,6 +27,7 @@ const loginInput = document.querySelector('#loginInput')
 const submitButton = document.querySelector('#submitButton')
 const skipButton = document.querySelector('#skipButton')
 const formSubmit = document.querySelector('#formSubmit')
+const onlyForIOS = document.querySelector('.only-for-ios')
 // Cover
 const imageCoverSection = document.querySelector('.images-cover-section')
 const imageCoverSectionImages = document.querySelector('.images-cover-section_images')
@@ -98,12 +99,22 @@ let matchMedia = gsap.matchMedia()
 
     gsap.set(mainNavbarSwissLogoSm, { display: 'none' })
 
+    function isIOSDevice(){
+      return !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
+    }
+
 
     if(!localStorage.getItem("username")) {
 
     gsap.set(userNameSection, {opacity: 0})
 
     gsap.set(htmlTag, {overflowY: 'hidden', overflowX: 'hidden', height: '100%'})
+    gsap.set(onlyForIOS, {display: 'none'})
+
+    if(isIOSDevice()){
+      gsap.set(onlyForIOS, {display: 'block'})
+    }
+
 
     gsap.set(mainNavbar, {zIndex: 111, backgroundColor: 'transparent'})
     gsap.set(loginWrapperBlack, {backgroundColor: "rgba(0, 0, 0, 0.4)" , opacity: 1 })
@@ -151,6 +162,7 @@ let matchMedia = gsap.matchMedia()
       gsap.to(userNameSection, 0.5, { opacity: 1 }).delay(0.8)
 
       gsap.set(htmlTag, {overflowY: 'auto', height: 'auto'})
+      gsap.to(onlyForIOS, 0.5, { display: 'none' }).delay(0.8)
 
       const tl0 = gsap.timeline();
       tl0.to(hideOnLogin, 1, { opacity: 0 }, 'one')

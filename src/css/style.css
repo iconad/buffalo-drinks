@@ -101,3 +101,7 @@ margin-left: 50px;
 
 
 }
+
+.only-for-ios {
+    @apply fixed inset-0 z-[30] bg-theme-black ;
+}
