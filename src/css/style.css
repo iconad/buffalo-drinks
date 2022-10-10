@@ -9,6 +9,7 @@
 
 html,body {
     font-family: 'Poppins', sans-serif;
+    overscroll-behavior: none;
 }
 
 .theme-container {
