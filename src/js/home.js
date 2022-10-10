@@ -195,7 +195,7 @@ let matchMedia = gsap.matchMedia()
         scrollTrigger: {
           trigger: imageCoverSection,
           start: "top top",
-          end: isMobile ? '+=500 bottom' : '+=1000 bottom',
+          end: isMobile ? '+=1000 bottom' : '+=1000 bottom',
           endTrigger: imageCoverSectionTextBlock2Child,
           scrub: 1,
           pin: true,
@@ -349,7 +349,7 @@ let matchMedia = gsap.matchMedia()
         scrollTrigger: {
           trigger: moreByBuffalo,
           start: "top top",
-          end: "+=2000 center",
+          end: "+=1400 center",
           scrub: 1,
           pin: colorfulBottles,
         }
