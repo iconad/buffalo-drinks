@@ -275,13 +275,13 @@ let matchMedia = gsap.matchMedia()
         .fromTo(classicCan, 2, { y: 0, opacity: 1 } , { y:  isMobile ? -1000 : -2000, opacity: 0 }, 'classic-out+=1')
         .to(upperThreeCans, 0, { display: 'none' }, 'classic-out')
 
-        .fromTo(loveEdition, 2, { x:  isMobile ? 0 : -2000, opacity: 0 } , { x: 0, opacity: 1 }, 'love-in-=1.6')
+        .fromTo(loveEdition, 2, { x:  isMobile ? 0 : -2000, opacity: 0 } , { x: 0, opacity: 1, zIndex: 60 }, 'love-in-=1.6')
         .fromTo(loveEditionCan, 2, { y:  isMobile ? -1000 : -2000, opacity: 0 } , { y: 0, opacity: 1 }, 'love-in-=1.6')
 
         .fromTo(loveEdition, 2, { x: 0, opacity: 1 } , { x:  isMobile ? 0 : -2000, opacity: 0 }, 'love-out+=1')
         .fromTo(loveEditionCan, 2, { y: 0, opacity: 1 } , { y:  isMobile ? -1000 : -2000, opacity: 0 }, 'love-out+=1')
 
-        .fromTo(goldenPath, 2, { x:  isMobile ? 0 : -2000, opacity: 0 } , { x: 0, opacity: 1}, 'golden-in-=1.2')
+        .fromTo(goldenPath, 2, { x:  isMobile ? 0 : -2000, opacity: 0 } , { x: 0, opacity: 1, zIndex: 70}, 'golden-in-=1.2')
         .fromTo(goldenCan, 2, { y:  isMobile ? -1000 : -2000, opacity: 0 } , { y: 0, opacity: 1 }, 'golden-in-=1.2')
 
         .from(goldenPath, 2, { x: 0, opacity: 1 }, 'golden-out+=1')
@@ -338,10 +338,42 @@ let matchMedia = gsap.matchMedia()
 
         duration: isMobile ? 0.2 : isTab ? 0.3 : isSmallLaptop ? 0.3 : isLaptop ? 0.5 : 0.3,
         stagger: {
-            amount: isMobile ? 1.7 : isTab ? 3 : isSmallLaptop ? 3.1 : isLaptop ? 3.1 : 3
+            amount: isMobile ? 1.7 : isTab ? 3 : isSmallLaptop ? 3.1 : isLaptop ? 3.3 : 3
         }
 
         }, '<');
+
+
+      document.querySelectorAll(".domore-list-mobile li").forEach((item) => {
+
+        gsap.to(item, {
+            scrollTrigger: {
+                trigger: item,
+                start: "top center+=7%",
+                end: "20% center",
+                scrub: 1,
+            },
+            duration: 1.2,
+            color: 'white',
+            scale: 1.2,
+            immediateRender: false,
+        })
+
+        gsap.to(item, {
+            scrollTrigger: {
+                trigger: item,
+                start: "80% center",
+                end: "bottom center+=7%",
+                scrub: 1,
+            },
+            duration: 1.2,
+            color: 'rgb(66, 68, 72)',
+            scale: 1,
+            immediateRender: false,
+        })
+
+    })
+
 
 
     // More Buffalo Timeline

@@ -11,6 +11,12 @@
     <div id="app" class="site-wrapper overflow-x-hidden pt-[9rem]">
 
 
+      <div class="spinner-wrapper bg-theme-black fixed inset-0 z-[100] flex items-center justify-center">
+        <div class="spinner" id="spinner">
+          <img src="/images/logo-sm.svg" alt="logo" class="h-8 mx-auto">
+        </div>
+      </div>
+
       <div class="main-navbar w-full bg-theme-dark-gray fixed left-0 top-0 z-50">
         <div class="theme-container text-white">
             <div class="flex align-center justify-between">
@@ -172,6 +178,30 @@
           <!-- popup -->
 
           <div>
+
+          </div>
+          <div class="relative">
+
+            <div class="absolute h-[80%] z-[3] flex items-center right-5 top-[10%]">
+              <button class="next px-0">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="opacity-[0.9] hover:opacity-[1] text-gray-200 w-10 lg:w-16 h-10 lg:h-16 ">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+
+              </button>
+            </div>
+
+
+            <div class="absolute h-[80%] z-[4] flex items-center left-5 top-[10%]">
+              <button class="prev px-0">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="opacity-[0.9] hover:opacity-[1] text-gray-200 w-10 lg:w-16 h-10 lg:h-16">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 9l-3 3m0 0l3 3m-3-3h7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+
+              </button>
+            </div>
+
+
             <div class="siema">
 
               <div>

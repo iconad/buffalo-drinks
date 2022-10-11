@@ -101,7 +101,7 @@ gsap.timeline({
   .fromTo(".do-more-image-sm",  { xPercent: 100, yPercent: -70 }, { xPercent: -50, yPercent: 20 }, 0)
 
 
-  new Siema({
+  const mySiema = new Siema({
     selector: '.siema',
     perPage: {
       100: 1.5,
@@ -113,8 +113,15 @@ gsap.timeline({
     loop: false,
   });
 
+  const prev = document.querySelector('.prev');
+  const next = document.querySelector('.next');
+
+  prev.addEventListener('click', () => mySiema.prev());
+  next.addEventListener('click', () => mySiema.next());
 
 
+  prevSlide.addEventListener('click', () => mySiema.prev());
+  nextSlide.querySelector('.next').addEventListener('click', () => mySiema.next());
 
   function removeParam(key, sourceURL) {
     var rtn = sourceURL.split("?")[0],
