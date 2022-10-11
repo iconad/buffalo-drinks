@@ -120,7 +120,7 @@ let matchMedia = gsap.matchMedia()
     gsap.set(mainNavbarMainLogo,
         {
             zIndex: 111,
-            y: isMobile ? '35vh' : isTab ? '35vh' : isDesktop ? '40vh' : '35vh',
+            y: '25vh',
             scale: 2
         })
     }else{
