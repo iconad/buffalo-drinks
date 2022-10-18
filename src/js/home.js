@@ -310,7 +310,6 @@ let matchMedia = gsap.matchMedia()
             x: isMobile ? '200%' : isTab ? '150%' : '50%' ,
             stagger:0.3
           }, 'two-=2')
-      // gsap.set(changeTheColorToBlack, {backgroundColor: 'white'});
 
 
 
