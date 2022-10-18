@@ -1,8 +1,8 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 const ST = ScrollTrigger;
 gsap.registerPlugin(ScrollTrigger);
-
 
 window.onload = function() {
 // Navbar
@@ -222,111 +222,29 @@ let matchMedia = gsap.matchMedia()
 
 
 
-    // Animated Three1Cans
-    const tl2 = gsap.timeline({
-        scrollTrigger: {
-            trigger: three1Cans,
-            start: isMobile ? 'center+=180 center' : isTab ? 'center+=50 center' : isSmallLaptop ? 'center-=180 center' :  isLaptop ? 'center-=180 center' : isDesktop ? 'center center+=180' : 'center center',
-            end: '+=3000',
-            scrub: 1,
-            pin: true,
-
-        }
-    });
-
-
-    tl2.fromTo(can1One, 1,
-        { x:0, y: 0, rotation:0 },
-        { x: '-50%', y: '-100%', rotation:25, transformOrigin:"top 100%" }, 'one-in' )
-      .fromTo(can1Two, 1,
-        { y:0, scale: 1 },
-        { y: '-80%', }, 'one-in' )
-      .fromTo(can1Three, 1,
-        { x:0, y: 0, rotation:0 },
-        { x: '50%', y: '-100%', rotation:-25, transformOrigin:"top 10%" }, 'one-in' )
-      .fromTo(three1CansText, 1, { scale:0, autoAlpha: 0 }, { scale: 1 , autoAlpha: 1}, 'one-in')
-
-      .fromTo(can1One, 2,
-        { x: '-50%', y: '-100%', rotation:25, transformOrigin:"top 100%" },
-        { x: '-550%' },
-        'one-out+=1')
-      .fromTo(can1Three, 2,
-        {
-          x: '50%', y: '-100%', rotation:-25, transformOrigin:"top 10%" },
-        { x: '550%', },
-        'one-out+=1')
-      .fromTo(three1CansText, 1,
-        { scale:1, autoAlpha: 1 },
-        { scale: 0, autoAlpha: 0 }, //translate(120%, -110%) rotate(40deg) scale(1.5)
-        'one-out+=1' )
-      .fromTo(can1Two, 1,
-        { y: '-80%', x: 0, rotation:0 },
-        {
-          x: '0%',
-          y: '-235%' ,
-        },
-        'one-out+=1')
-
-
-        .fromTo(classicPath, 2, { x: isMobile ? 0 :  2000, opacity: 0 } , { x: 0, opacity: 1 }, 'classic-in-=2.2')
-        .fromTo(classicCan, 2, { y:  isMobile ? -1000 : -2000, opacity: 0 } , { y: 0, opacity: 1 }, 'classic-in-=2.2')
-
-        .fromTo(classicPath, 2, { x: 0, opacity: 1 } , { x: isMobile ? 0 :  2000, opacity: 0 }, 'classic-out+=1')
-        .fromTo(classicCan, 2, { y: 0, opacity: 1 } , { y:  isMobile ? -1000 : -2000, opacity: 0 }, 'classic-out+=1')
-        .to(upperThreeCans, 0, { display: 'none' }, 'classic-out')
-
-        .fromTo(loveEdition, 2, { x:  isMobile ? 0 : -2000, opacity: 0 } , { x: 0, opacity: 1, zIndex: 60 }, 'love-in-=1.6')
-        .fromTo(loveEditionCan, 2, { y:  isMobile ? -1000 : -2000, opacity: 0 } , { y: 0, opacity: 1 }, 'love-in-=1.6')
-
-        .fromTo(loveEdition, 2, { x: 0, opacity: 1 } , { x:  isMobile ? 0 : -2000, opacity: 0 }, 'love-out+=1')
-        .fromTo(loveEditionCan, 2, { y: 0, opacity: 1 } , { y:  isMobile ? -1000 : -2000, opacity: 0 }, 'love-out+=1')
-
-        .fromTo(goldenPath, 2, { x:  isMobile ? 0 : -2000, opacity: 0 } , { x: 0, opacity: 1, zIndex: 70}, 'golden-in-=1.2')
-        .fromTo(goldenCan, 2, { y:  isMobile ? -1000 : -2000, opacity: 0 } , { y: 0, opacity: 1 }, 'golden-in-=1.2')
-
-        .from(goldenPath, 2, { x: 0, opacity: 1 }, 'golden-out+=1')
-        .from(goldenCan, 2, { y: 0, opacity: 1 }, 'golden-out+=1')
-
-
-   // Why Buffalo Timeline
-    const tl4 = gsap.timeline({
-        scrollTrigger: {
-        trigger: whyBuffalloSection,
-        start: "top center+=20%",
-        end: "center center",
-        scrub: 1
-        }
-    });
-
-    tl4.to(whyBuffalloTitle, 0.5, { scale: 0.8, opacity: 0.6 })
-        .to(whyBuffalloBoxes, 0.5, { scale: 0.8, opacity: 0.6 });
-
     const tl5 = gsap.timeline({
         scrollTrigger: {
-        trigger: doMoreSection,
+        trigger: '.do-more-wrapper',
         start: 'center center',
         end: isMobile ? '+=100%' : '+=250%',
-        endTrigger: doMoreSection,
+        endTrigger: '.do-more-wrapper',
         scrub: bigDoMore,
         pin: true,
         }
     });
 
-    tl5.fromTo( doMoreTextText, 10, { y: 500, opacity: 0 }, { y: 0, opacity: 1 }, "text-in-=1")
-        .fromTo( doMoreTextText, 10, { y: 0, opacity: 1 }, { y: -1500, opacity: 0 }, "text-out+=0.1")
-        .fromTo( doMoreTwoCans, 3, { y: 0, opacity: 1 }, { y: -1500, opacity: 0 }, isMobile ? "text-in" : "do-more-in")
-        .fromTo( bigDoMore, 1, { x: 0, y: 500, opacity: 0 }, { x: 0, y: 0, opacity: 1 }, "do-more-in-=1")
-        .fromTo( bigDoMore, 1, { x: 0, scale: 1 },
+    tl5.fromTo( bigDoMore, 1, { x: 0, scale: 1, opacity: 0 },
         {
-            x: isMobile ? -100 : isTab ? -200 : -290,
-            scale: isMobile ? 0.40 : isTab ? 0.25 : 0.35
+            x: 0,
+            scale: isMobile ? 0.40 : isTab ? 0.25 : 0.35,
+            opacity: 1
         }, "do-more-in")
-        .fromTo( doMoreList, 1, { y: 500, x: 200, opacity: 0 }, { y: 300, x: 200, opacity: 1 }, "do-more-list-=1")
+        .fromTo( doMoreList, 1, { y: 500, x: -200, opacity: 0 }, { y: 300, x: -200, opacity: 1 }, "do-more-list-=1")
 
         .to(".do-more-list",
         {
             duration: isMobile ? 2 : 3,
-            yPercent: isMobile ? -45 : isTab ? -125 : isSmallLaptop ? -215 : isLaptop ? -150 : -120,
+            yPercent: -90,
             ease: 'none'
         })
         .to(".do-more-list li", {
@@ -387,25 +305,12 @@ let matchMedia = gsap.matchMedia()
         }
       });
 
-      tl6.fromTo(moreByBuffaloTitle, 3, { y: '0%', scale: 1, opacity: 1 }, { y: '-50%', scale: 0.7, opacity: 0.6 }, 'one')
-        .fromTo(moreByBuffaloInfo, 3, { y: '0%', scale: 1, opacity: 1 }, { y: '-50%', scale: 0.7, opacity: 0.6 }, 'one')
-        .fromTo(bottlePath, isMobile ? 0.5 : isTab ? 0.5 : 2, { x:'-100%' },
-          {
-            x: '0%',
-            stagger:0.3
-          }, 'two-=2')
-        .fromTo(bottleContainer, isMobile ? 10 : isTab ? 10 : 5, { x:'-130%' },
+      tl6.fromTo(bottleContainer, isMobile ? 10 : isTab ? 10 : 5, { x:'-100%' },
           {
             x:'50%',
             stagger:0.3
           }, 'two-=2')
-        .fromTo(bottlePath, 2, { x:'0%' },
-          {
-            x:'100%',
-            stagger:0.3
-          }, 'three-=2')
-
-      gsap.set(changeTheColorToBlack, {backgroundColor: 'white'});
+      // gsap.set(changeTheColorToBlack, {backgroundColor: 'white'});
 
 
 

@@ -1,7 +1,15 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 const ST = ScrollTrigger;
 gsap.registerPlugin(ScrollTrigger);
+
+AOS.init({
+  duration: 500
+});
+
 
 
 const mainNavbarBurger = document.querySelector('.main-navbar_burger')

@@ -1,6 +1,5 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Siema from 'siema';
 const ST = ScrollTrigger;
 gsap.registerPlugin(ScrollTrigger);
 
@@ -74,7 +73,8 @@ function openProductPopupFromURL (e) {
 }
 
 
-closePopup.addEventListener('click', function () {
+if(closePopup){
+  closePopup.addEventListener('click', function () {
 
 
     const popupTL = gsap.timeline();
@@ -86,6 +86,7 @@ closePopup.addEventListener('click', function () {
     //  window.location.href = location.protocol + '//' + window.location.host + window.location.pathname + window.location.hash
 
 })
+}
 
 
 
@@ -100,43 +101,3 @@ gsap.timeline({
   .fromTo(".do-more-image-big",  { xPercent: 50, yPercent: -20 }, { xPercent: -50, yPercent: 20 }, 0)
   .fromTo(".do-more-image-sm",  { xPercent: 100, yPercent: -70 }, { xPercent: -50, yPercent: 20 }, 0)
 
-
-  const mySiema = new Siema({
-    selector: '.siema',
-    perPage: {
-      100: 1.5,
-      600: 2.5,
-      1000: 3.5,
-      1380: 4.5,
-      1680: 5.5,
-    },
-    loop: false,
-  });
-
-  const prev = document.querySelector('.prev');
-  const next = document.querySelector('.next');
-
-  prev.addEventListener('click', () => mySiema.prev());
-  next.addEventListener('click', () => mySiema.next());
-
-
-  prevSlide.addEventListener('click', () => mySiema.prev());
-  nextSlide.querySelector('.next').addEventListener('click', () => mySiema.next());
-
-  function removeParam(key, sourceURL) {
-    var rtn = sourceURL.split("?")[0],
-        param,
-        params_arr = [],
-        queryString = (sourceURL.indexOf("?") !== -1) ? sourceURL.split("?")[1] : "";
-    if (queryString !== "") {
-        params_arr = queryString.split("&");
-        for (var i = params_arr.length - 1; i >= 0; i -= 1) {
-            param = params_arr[i].split("=")[0];
-            if (param === key) {
-                params_arr.splice(i, 1);
-            }
-        }
-        if (params_arr.length) rtn = rtn + "?" + params_arr.join("&");
-    }
-    return rtn;
-}
