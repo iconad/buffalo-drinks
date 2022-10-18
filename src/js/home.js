@@ -307,7 +307,7 @@ let matchMedia = gsap.matchMedia()
 
       tl6.fromTo(bottleContainer, isMobile ? 10 : isTab ? 10 : 5, { x:'-100%' },
           {
-            x:'50%',
+            x: isMobile ? '200%' : isTab ? '150%' : '50%' ,
             stagger:0.3
           }, 'two-=2')
       // gsap.set(changeTheColorToBlack, {backgroundColor: 'white'});
