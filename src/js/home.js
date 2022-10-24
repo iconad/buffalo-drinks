@@ -226,11 +226,12 @@ let matchMedia = gsap.matchMedia()
         scrollTrigger: {
         trigger: '.do-more-wrapper',
         start: 'center center',
-        end: isMobile ? '+=100%' : '+=250%',
+        end: '+=100% center',
         endTrigger: '.do-more-wrapper',
         scrub: bigDoMore,
         pin: true,
-        }
+        markers: true
+      }
     });
 
     tl5.fromTo( bigDoMore, 1, { x: 0, scale: 1, opacity: 0 },
