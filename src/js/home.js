@@ -229,8 +229,7 @@ let matchMedia = gsap.matchMedia()
         end: '+=100% center',
         endTrigger: '.do-more-wrapper',
         scrub: bigDoMore,
-        pin: true,
-        markers: true
+        pin: true
       }
     });
 
@@ -300,7 +299,7 @@ let matchMedia = gsap.matchMedia()
         scrollTrigger: {
           trigger: moreByBuffalo,
           start: "top top",
-          end: "+=1400 center",
+          end: "+=100% center",
           scrub: 1,
           pin: colorfulBottles,
         }
@@ -308,7 +307,7 @@ let matchMedia = gsap.matchMedia()
 
       tl6.fromTo(bottleContainer, isMobile ? 10 : isTab ? 10 : 5, { x:'-100%' },
           {
-            x: isMobile ? '200%' : isTab ? '150%' : '50%' ,
+            x: isMobile ? '200%' : isTab ? '150%' : '110%' ,
             stagger:0.3
           }, 'two-=2')
 
