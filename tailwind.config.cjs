@@ -6,6 +6,8 @@ module.exports = {
     "./about.html",
     "./products.html",
     "./buffalo-classic.html",
+    "./buffalo-love.html",
+    "./buffalo-gold.html",
     "./buffalo-revive-flow.html",
     "./buffalo-revive-orange.html",
     "./buffalo-revive-kiwi.html",

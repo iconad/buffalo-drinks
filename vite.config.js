@@ -10,6 +10,8 @@ export default defineConfig({
         distribotor: resolve(__dirname, 'distributor.html'),
         products: resolve(__dirname, 'products.html'),
         classic: resolve(__dirname, 'buffalo-classic.html'),
+        love: resolve(__dirname, 'buffalo-love.html'),
+        gold: resolve(__dirname, 'buffalo-gold.html'),
         kiwi: resolve(__dirname, 'buffalo-revive-kiwi.html'),
         cool: resolve(__dirname, 'buffalo-revive-cool.html'),
         flow: resolve(__dirname, 'buffalo-revive-flow.html'),
